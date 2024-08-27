@@ -27,7 +27,6 @@
 --
 [FLOW] Restrict Creation if Account Balance is Below Minimum
 [FLOW] Restrict Account Being Below or Above the Absolute Total Loan Amount Min and Max
-[TRIGGER] calculateRemainingLoanAmount()
 [TRIGGER] calculateInterest()
 [TRIGGER] calculateLoanInterestRate()
 --
