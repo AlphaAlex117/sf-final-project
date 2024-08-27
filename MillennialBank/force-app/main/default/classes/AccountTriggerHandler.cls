@@ -20,14 +20,12 @@ public class AccountTriggerHandler {
 
     private static void beforeInsert(List<Account> newAccounts) {
         Map<Id, String> recordTypeNames = getRecordTypeNames(newAccounts);
-        calculateRemainingLoanAmount(newAccounts);
         calculateInterest(newAccounts);
         calculateLoanInterestRate(newAccounts, recordTypeNames);
     }
 
     private static void beforeUpdate(List<Account> newAccounts, Map<Id, SObject> oldAccountMap) {
         Map<Id, String> recordTypeNames = getRecordTypeNames(newAccounts);
-        calculateRemainingLoanAmount(newAccounts);
         calculateInterest(newAccounts);
         calculateLoanInterestRate(newAccounts, recordTypeNames);
     }
@@ -45,17 +43,6 @@ public class AccountTriggerHandler {
     }
 
     private static void afterUndelete(List<Account> newAccounts) {
-    }
-
-    // Method to calculate Remaining Loan Amount
-    private static void calculateRemainingLoanAmount(List<Account> accounts) {
-        for (Account acc : accounts) {
-            if (acc.Total_Loan_Amount__c != null && acc.Monthly_Interest_Rate_Payments__c != null) {
-                acc.Remaining_Loan_Amount__c = acc.Total_Loan_Amount__c - (acc.Monthly_Interest_Rate_Payments__c / 2);
-            } else {
-                acc.Remaining_Loan_Amount__c = acc.Total_Loan_Amount__c;
-            }
-        }
     }
 
     // Method to get RecordType Names
