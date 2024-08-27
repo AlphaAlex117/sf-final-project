@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>261</x>
+      <y>36</y>
+      <w>540</w>
+      <h>342</h>
+    </coordinates>
+    <panel_attributes>Account
+--
+-Id: Id
+-Balance__c: Currency
+-Name: Name
+-RecordTypeId: Record Type
+-Calculated_Interest__c: Currency
+-Email__c: Email
+-Interest_Rate__c: Formula(Percent)
+-Loan_Interest_Rate__c: Percent
+-Loan_Type__c: Picklist
+-Monthly_Interest_Rate_Payments__c: Formula(Currency)
+-Phone: Phone
+-Remaining_Loan_Amount__c: Currency
+-Total_Loan_Ampunt__c: Currency
+--
+[FLOW] Restrict Creation if Account Balance is Below Minimum
+[FLOW] Restrict Account Being Below or Above the Absolute Total Loan Amount Min and Max
+[TRIGGER] calculateRemainingLoanAmount()
+[TRIGGER] calculateInterest()
+[TRIGGER] calculateLoanInterestRate()
+--
+Responsibilities
+-- Holds variables, but the functionalities depend on the 
+record types.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>819</x>
+      <y>162</y>
+      <w>342</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>Contact
+--
+-Id: Id
+-AccountId: Lookup(Account)
+-Email: Email
+-LastName: Text
+--
+[FLOW] Send Email On Create Flow
+[VALIDATION RULE] Account_Validation
+[VALIDATION RULE] Contact_Validation
+[VALIDATION RULE] Priority_Validation
+[VALIDATION RULE] Subject_Validation
+--
+Responsibilities
+-- Holds the Contacts for Accounts that are from a 
+business or company.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>405</x>
+      <y>468</y>
+      <w>342</w>
+      <h>207</h>
+    </coordinates>
+    <panel_attributes>Case
+--
+-Id: Id
+-AccountId: Lookup(Account)
+-CaseNumber: Auto Number
+-Origin: Picklist
+-ContactId: Lookup(Contact)
+-Priority: Picklist
+-Status: Picklist
+-Subject: Text
+--
+[VALIDATION RULE] Account_Name_Validation
+[VALIDATION RULE] Email_Validation
+--
+Responsibilities
+-- Holds all the issues raised by respective contacts.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>99</y>
+      <w>234</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+can have &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;220.0;20.0;220.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>567</x>
+      <y>369</y>
+      <w>90</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=0..n
+can have v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>738</x>
+      <y>369</y>
+      <w>288</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=0..n
+&lt; can have</panel_attributes>
+    <additional_attributes>10.0;140.0;280.0;140.0;280.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>27</x>
+      <y>225</y>
+      <w>189</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Salary Account
+&lt;&lt;Record Type&gt;&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>27</x>
+      <y>279</y>
+      <w>189</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Transactional Account
+&lt;&lt;Record Type&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>27</x>
+      <y>333</y>
+      <w>189</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Current Account
+&lt;&lt;Record Type&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>207</x>
+      <y>288</y>
+      <w>72</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>207</x>
+      <y>234</y>
+      <w>72</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;70.0;30.0;70.0;30.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>207</x>
+      <y>288</y>
+      <w>72</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;30.0;10.0;30.0;70.0;10.0;70.0</additional_attributes>
+  </element>
+</diagram>
