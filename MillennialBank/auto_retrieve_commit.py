@@ -23,7 +23,7 @@ def commit_and_push():
     try:
         print("Committing changes...")
         subprocess.run(["git", "add", "."], check=True)
-        subprocess.run(["git", "commit", "-m", "Automated commit"], check=True)
+        subprocess.run(["git", "commit", "-m", "Automated Backup"], check=True)
         subprocess.run(["git", "push"], check=True)
         print("Changes pushed to GitHub.")
     except subprocess.CalledProcessError as e:
