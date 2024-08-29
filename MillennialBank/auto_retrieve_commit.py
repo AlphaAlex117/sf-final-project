@@ -34,7 +34,7 @@ def main():
     while True:
         retrieve_source()
         commit_and_push()
-        print("\033[Waiting for 5 minutes...")
+        print("\033[1;32m Waiting for 5 minutes...")
         time.sleep(300)  # Wait for 300 seconds (5 minutes)
 
 if __name__ == "__main__":
