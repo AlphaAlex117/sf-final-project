@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>261</x>
+      <x>243</x>
       <y>36</y>
       <w>540</w>
       <h>342</h>
@@ -23,7 +23,7 @@
 -Monthly_Interest_Rate_Payments__c: Formula(Currency)
 -Phone: Phone
 -Remaining_Loan_Amount__c: Currency
--Total_Loan_Ampunt__c: Currency
+-Total_Loan_Amount__c: Currency
 --
 [FLOW] Restrict Creation if Account Balance is Below Minimum
 [FLOW] Restrict Account Being Below or Above the Absolute Total Loan Amount Min and Max
@@ -38,7 +38,7 @@ record types.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>819</x>
+      <x>801</x>
       <y>162</y>
       <w>342</w>
       <h>216</h>
@@ -64,7 +64,7 @@ business or company.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>405</x>
+      <x>387</x>
       <y>468</y>
       <w>342</w>
       <h>207</h>
@@ -90,7 +90,7 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>792</x>
+      <x>774</x>
       <y>99</y>
       <w>234</w>
       <h>81</h>
@@ -104,7 +104,7 @@ can have &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>567</x>
+      <x>549</x>
       <y>369</y>
       <w>90</w>
       <h>117</h>
@@ -118,7 +118,7 @@ can have v</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>738</x>
+      <x>720</x>
       <y>369</y>
       <w>288</w>
       <h>153</h>
@@ -132,7 +132,7 @@ m2=0..n
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>27</x>
+      <x>9</x>
       <y>225</y>
       <w>189</w>
       <h>36</h>
@@ -145,7 +145,7 @@ m2=0..n
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>27</x>
+      <x>9</x>
       <y>279</y>
       <w>189</w>
       <h>36</h>
@@ -157,7 +157,7 @@ m2=0..n
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>27</x>
+      <x>9</x>
       <y>333</y>
       <w>189</w>
       <h>36</h>
@@ -169,7 +169,7 @@ m2=0..n
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>207</x>
+      <x>189</x>
       <y>288</y>
       <w>72</w>
       <h>27</h>
@@ -180,7 +180,7 @@ m2=0..n
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>207</x>
+      <x>189</x>
       <y>234</y>
       <w>72</w>
       <h>81</h>
@@ -191,7 +191,7 @@ m2=0..n
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>207</x>
+      <x>189</x>
       <y>288</y>
       <w>72</w>
       <h>81</h>

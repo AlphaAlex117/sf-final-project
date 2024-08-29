@@ -1,11 +1,13 @@
 <template>
     <lightning-card title="Make a Payment">
         <template if:true={showPaymentForm}>
-            <div class="slds-var-p-around_medium">
+            <div class="slds-var-p-around_medium"
+            style="border: 2px solid #0070d2; border-radius: 8px;">
                 <lightning-input
                     label="Monthly Interest Rate Payment"
                     value={monthlyInterestRatePayments}
-                    readonly>
+                    readonly
+                    style="font-weight: bold;">
                 </lightning-input>
                 <lightning-button
                     label="YES"
@@ -16,11 +18,13 @@
         </template>
 
         <template if:false={showPaymentForm}>
-            <div class="slds-var-p-around_medium">
+            <div class="slds-var-p-around_medium"
+            style="border: 2px solid #0070d2; border-radius: 8px;">
                 <lightning-button
                     label="Make a Payment"
                     variant="neutral"
-                    onclick={handleShowPaymentForm}>
+                    onclick={handleShowPaymentForm}
+                    style="font-weight: bold;">
                 </lightning-button>
             </div>
         </template>
