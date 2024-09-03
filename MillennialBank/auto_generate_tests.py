@@ -34,23 +34,40 @@ def generate_test_data(sheet):
         # Get Test Record Type from file.
         record_type = row[4]
 
-        calculated_interest = row[5]
+        # Get Test Calculated Interest from file. If Anything Else, then add an input.
+        calculated_interest = ''
+        if (row[5] == 'Anything Else'):
+            calculated_interest = 7
 
         # Get Test Email from file. If Normal, then add a valid email.
         email = ''
         if (row[6] == 'Normal'):
             email = 'test' + test_number + '@pairwise.test'
+
+        # Get Test Interest Rate from file.
+        interest_rate = row[7]
+
+        # Get Test Loan Interest Rate from file.
+        loan_interest_rate = 0
+        if (row[8] == 'Anything Else'):
+            loan_interest_rate = 107
+        else:
+            loan_interest_rate = row[8]
         
-        loan_interest_rate = row[4] if row[4] in [5, 10, 15, 20] else 'FAIL'  # Replace with valid percentages
-        total_loan_amount = row[5] if row[5] else random.randint(0, 100)  # Random value if range not specified
-        active = row[6]
         
+        loan_type = row[9]
+
         remaining_loan_amount = None  # Should fail if it is not blank
+        
+        total_loan_amount = row[5] if row[5] else random.randint(0, 100)  # Random value if range not specified
+        
+        
+        active = row[6]
 
         if record_type != 'Salary Account' and balance > 0:
             balance = 'FAIL'  # If Record Type is not Salary Account, balance should be 0
 
-        test_data.append([dml_type, name, balance, record_type, email, loan_interest_rate, total_loan_amount, active, calculated_interest, remaining_loan_amount])
+        test_data.append([test_number, dml_type, name, balance, record_type, calculated_interest, email, interest_rate, loan_interest_rate, total_loan_amount, active, remaining_loan_amount])
 
     return test_data
 
