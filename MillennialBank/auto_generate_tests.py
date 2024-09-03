@@ -90,33 +90,68 @@ def generate_test_data(sheet):
 def generate_apex_test_cases(test_data):
     apex_tests = []
 
-    for i, data in enumerate(test_data):
-        apex_test = f"""
-        @isTest
-        public static void testAccount_{i + 1}() {{
-            Account acc = new Account();
-            acc.Name = '{data[0]}';
-            acc.Balance__c = {data[1]};
-            acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('{data[2]}').getRecordTypeId();
-            acc.Email__c = '{data[3]}';
-            acc.Loan_Interest_Rate__c = {data[4]};
-            acc.Total_Loan_Amount__c = {data[5]};
-            acc.Active__c = {data[6]};
-            acc.Calculated_Interest__c = {data[7]};
-            acc.Remaining_Loan_Amount__c = {data[8]};
-            
-            Test.startTest();
-            try {{
-                insert acc;
-                System.assert(false, 'Expected an error, but insert succeeded.');
-            }} catch (DmlException e) {{
-                System.assert(e.getMessage().contains(''), 'Unexpected error message: ' + e.getMessage());
+    for data in enumerate(test_data):
+        # Add a Create Test
+        if (data[1] == 'Create'):
+            apex_test = f"""
+            @isTest
+            public static void testAccount_{data[0]}() {{
+                Account acc = new Account();
+                acc.Name = '{data[2]}';
+                acc.Balance__c = {data[3]};
+                acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('{data[4]}').getRecordTypeId();
+                acc.Calculated_Interest__c = {data[5]};
+                acc.Email__c = '{data[6]}';
+                acc.Loan_Interest_Rate__c = {data[8]};
+                acc.Loan_Type__c = {data[9]};
+                acc.Remaining_Loan_Amount__c = {data[10]};
+                acc.Total_Loan_Amount__c = {data[11]};
+                acc.Active__c = {data[12]};
+                
+                Test.startTest();
+                try {{
+                    insert acc;
+                    System.assert(false, 'Expected an error, but insert succeeded.');
+                }} catch (DmlException e) {{
+                    System.assert(e.getMessage().contains(''), 'Unexpected error message: ' + e.getMessage());
+                }}
+                Test.stopTest();
             }}
-            Test.stopTest();
-        }}
-        """
-        apex_tests.append(apex_test)
-
+            """
+            apex_tests.append(apex_test)
+        
+        # Add an Update Test
+        elif (data[1] == 'Update'):
+            apex_test = f"""
+            @isTest
+            public static void testAccount_{data[0]}() {{
+                Account acc = new Account();
+                
+                insert acc;
+                
+                acc.Name = '{data[2]}';
+                acc.Balance__c = {data[3]};
+                acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('{data[4]}').getRecordTypeId();
+                acc.Calculated_Interest__c = {data[5]};
+                acc.Email__c = '{data[6]}';
+                acc.Loan_Interest_Rate__c = {data[8]};
+                acc.Loan_Type__c = {data[9]};
+                acc.Remaining_Loan_Amount__c = {data[10]};
+                acc.Total_Loan_Amount__c = {data[11]};
+                acc.Active__c = {data[12]};
+                
+                Test.startTest();
+                try {{
+                    update acc;
+                    System.assert(false, 'Expected an error, but insert succeeded.');
+                }} catch (DmlException e) {{
+                    System.assert(e.getMessage().contains(''), 'Unexpected error message: ' + e.getMessage());
+                }}
+                Test.stopTest();
+            }}
+            """
+            apex_tests.append(apex_test)
+        
     return "\n".join(apex_tests)
 
 # Main function to run the script
