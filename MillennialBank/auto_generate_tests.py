@@ -11,9 +11,22 @@ def load_excel(file_path):
 def generate_test_data(sheet):
     test_data = []
     
-    for row in sheet.iter_rows(min_row=2, values_only=True):
-        name = row[0] if row[0] else 'FAIL'  # If Name is Blank, it should fail
-        balance = row[1] if row[1] is not None and row[1] > 0 else 'FAIL'
+    for row in sheet.iter_rows(values_only=True):
+        # Get Test Number from file
+        test_number = row[0]
+        # Get Test Type from file
+        dml_type = row[1]
+        
+        # Get Test Name from file. If not Blank, then add it. 
+        name = ''
+        if (row[2] != 'Blank'):
+            name = row[2]
+        
+        balance = ''
+        if (row[3] == 'Negative'):
+            balance = -7
+        
+        balance = row[1] if row[1] else '' # if no value, then blank
         record_type = row[2]
         email = row[3] if row[3] else 'FAIL'  # If Email is Blank, it should fail
         loan_interest_rate = row[4] if row[4] in [5, 10, 15, 20] else 'FAIL'  # Replace with valid percentages
@@ -25,7 +38,7 @@ def generate_test_data(sheet):
         if record_type != 'Salary Account' and balance > 0:
             balance = 'FAIL'  # If Record Type is not Salary Account, balance should be 0
 
-        test_data.append([name, balance, record_type, email, loan_interest_rate, total_loan_amount, active, calculated_interest, remaining_loan_amount])
+        test_data.append([dml_type, name, balance, record_type, email, loan_interest_rate, total_loan_amount, active, calculated_interest, remaining_loan_amount])
 
     return test_data
 
