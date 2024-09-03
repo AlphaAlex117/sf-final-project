@@ -60,7 +60,7 @@ def generate_test_data(sheet):
             loan_type = row[9]
         
 
-        remaining_loan_amount = ''
+        remaining_loan_amount = 'null'
         if (row[10] == 'Anything Else'):
             remaining_loan_amount = 15000000
 
@@ -96,6 +96,7 @@ def generate_apex_test_cases(test_data):
             apex_test = f"""
             @isTest
             public static void testAccount_{data[1][0]}() {{
+                Test.startTest();
                 Account acc = new Account();
                 acc.Name = '{data[1][2]}';
                 acc.Balance__c = {data[1][3]};
@@ -108,18 +109,18 @@ def generate_apex_test_cases(test_data):
                 acc.Total_Loan_Amount__c = {data[1][11]};
                 acc.Active__c = '{data[1][12]}';
                 
-                Test.startTest();
+                
                 try {{
                     insert acc;
                     Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='{data[1][2]}' LIMIT 1];
-                    System.assert(acc.Name, testAcc.Name);
-                    System.assert(acc.Balance__c, testAcc.Balance__c);
-                    System.assert(acc.Balance__c * {data[1][7]}, testAcc.Calculated_Interest__c);
-                    System.assert(acc.Email__c, testAcc.Email__c);
-                    System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-                    System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-                    //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-                    System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+                    System.assertEquals(acc.Name, testAcc.Name);
+                    System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+                    System.assertEquals(acc.Balance__c * {data[1][7]}, testAcc.Calculated_Interest__c);
+                    System.assertEquals(acc.Email__c, testAcc.Email__c);
+                    System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+                    System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+                    //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+                    System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
                 }} catch (Exception e) {{
                     System.assert(false, e.getMessage());
                 }}
@@ -133,6 +134,7 @@ def generate_apex_test_cases(test_data):
             apex_test = f"""
             @isTest
             public static void testAccount_{data[1][0]}() {{
+                Test.startTest();
                 Account acc = new Account();
                 acc.Name = 'ToUpdate Account';
                 acc.Balance__c = 100;
@@ -150,18 +152,18 @@ def generate_apex_test_cases(test_data):
                 acc.Remaining_Loan_Amount__c = {data[1][10]};
                 acc.Total_Loan_Amount__c = {data[1][11]};
                 
-                Test.startTest();
+                
                 try {{
                     update acc;
                     Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='{data[1][2]}' LIMIT 1];
-                    System.assert(acc.Name, testAcc.Name);
-                    System.assert(acc.Balance__c, testAcc.Balance__c);
-                    System.assert(acc.Balance__c * {data[1][7]}, testAcc.Calculated_Interest__c);
-                    System.assert(acc.Email__c, testAcc.Email__c);
-                    System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-                    System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-                    //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-                    System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+                    System.assertEquals(acc.Name, testAcc.Name);
+                    System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+                    System.assertEquals(acc.Balance__c * {data[1][7]}, testAcc.Calculated_Interest__c);
+                    System.assertEquals(acc.Email__c, testAcc.Email__c);
+                    System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+                    System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+                    //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+                    System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
                 }} catch (Exception e) {{
                     System.assert(false, e.getMessage());
                 }}

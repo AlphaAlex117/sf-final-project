@@ -1,6 +1,7 @@
 
     @isTest
     public static void testAccount_1() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -10,26 +11,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 198;
+        acc.Balance__c = 199;
         acc.Calculated_Interest__c = null;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 107;
         acc.Loan_Type__c = 'Car Loan';
         acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 613086;
+        acc.Total_Loan_Amount__c = 881162;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -39,6 +40,7 @@
 
     @isTest
     public static void testAccount_2() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -48,26 +50,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 178;
+        acc.Balance__c = 186;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.11;
         acc.Loan_Type__c = 'Home Loan';
         acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 505363;
+        acc.Total_Loan_Amount__c = 674136;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -77,6 +79,7 @@
 
     @isTest
     public static void testAccount_3() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -86,26 +89,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 151;
+        acc.Balance__c = 159;
         acc.Calculated_Interest__c = null;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.07;
         acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 274155;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 449855;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -115,6 +118,7 @@
 
     @isTest
     public static void testAccount_4() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -124,26 +128,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 164;
+        acc.Balance__c = 135;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = null;
         acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 39778;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 33890;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -153,9 +157,10 @@
 
     @isTest
     public static void testAccount_5() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = '';
-        acc.Balance__c = 177;
+        acc.Balance__c = 184;
         acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
         acc.Calculated_Interest__c = 7;
         acc.Email__c = 'test5@pairwise.test';
@@ -165,18 +170,18 @@
         acc.Total_Loan_Amount__c = null;
         acc.Active__c = 'Yes';
         
-        Test.startTest();
+        
         try {
             insert acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -186,6 +191,7 @@
 
     @isTest
     public static void testAccount_6() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -195,26 +201,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 139;
+        acc.Balance__c = 156;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = 'test6@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.08;
         acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 988301;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 917873;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -224,6 +230,7 @@
 
     @isTest
     public static void testAccount_7() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -233,26 +240,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 190;
+        acc.Balance__c = 120;
         acc.Calculated_Interest__c = null;
         acc.Email__c = 'test7@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.125;
         acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 2047278;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 2237463;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -262,6 +269,7 @@
 
     @isTest
     public static void testAccount_8() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -271,26 +279,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 114;
+        acc.Balance__c = 149;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = 'test8@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.14;
         acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
+        acc.Remaining_Loan_Amount__c = null;
         acc.Total_Loan_Amount__c = null;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -300,926 +308,7 @@
 
     @isTest
     public static void testAccount_9() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 110;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test9@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.11;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 78743;
-        
         Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_10() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 130;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.125;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = null;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_11() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 195;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test11@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.125;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = null;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_12() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 176;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test12@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.10300000000000001;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 82543;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_13() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 162;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test13@pairwise.test';
-        acc.Loan_Interest_Rate__c = null;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 597231;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_14() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 136;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.08;
-        acc.Loan_Type__c = '';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = null;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_15() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 165;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.162;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 9545866;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_16() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 174;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.07;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 69813;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_17() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 190;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test17@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.136;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 570708;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_18() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 131;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.1;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 827096;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_19() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 200;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test19@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.10300000000000001;
-        acc.Loan_Type__c = 'Car Loan';
-        //acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 7967044;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_20() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.07;
-        acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 674591;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_21() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 145;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 107;
-        acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 3029460;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_22() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 153;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test22@pairwise.test';
-        acc.Loan_Interest_Rate__c = 107;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = null;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_23() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 135;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.159;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 8118002;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_24() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 112;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test24@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.11900000000000001;
-        acc.Loan_Type__c = 'Car Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 3880461;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_25() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 114;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.125;
-        acc.Loan_Type__c = '';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = null;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_26() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 112;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test26@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.146;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 2341658;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_27() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 152;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test27@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.162;
-        acc.Loan_Type__c = 'Car Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 797276;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_28() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 162;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.08;
-        acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = null;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_29() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 127;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.084;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 467343;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_30() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 110;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 107;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 878102;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_31() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 105;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.08;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 77426;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_32() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 103;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test32@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.109;
-        acc.Loan_Type__c = '';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = null;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_33() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 198;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test33@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.11900000000000001;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 9245354;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_34() {
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -1230,25 +319,25 @@
         
         acc.Name = '';
         acc.Balance__c = 101;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = null;
-        acc.Loan_Type__c = '';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = null;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test9@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.11;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 75893;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -1257,7 +346,461 @@
     
 
     @isTest
-    public static void testAccount_35() {
+    public static void testAccount_10() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 154;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.125;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = null;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_11() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 137;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test11@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.125;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = null;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_12() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 103;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test12@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.10300000000000001;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 808150;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_13() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 121;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test13@pairwise.test';
+        acc.Loan_Interest_Rate__c = null;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 607286;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_14() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 175;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.08;
+        acc.Loan_Type__c = '';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = null;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_15() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 135;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.162;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 7275663;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_16() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 189;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.07;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 575107;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_17() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 135;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test17@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.136;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 508899;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_18() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 160;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.1;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 807352;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_19() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 190;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test19@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.10300000000000001;
+        acc.Loan_Type__c = 'Car Loan';
+        //acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 7908803;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_20() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 126;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.07;
+        acc.Loan_Type__c = 'Home Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 891428;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_21() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 109;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 107;
+        acc.Loan_Type__c = 'Home Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 2306002;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_22() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -1268,499 +811,25 @@
         
         acc.Name = '';
         acc.Balance__c = 151;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test35@pairwise.test';
-        acc.Loan_Interest_Rate__c = null;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 5088045;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_36() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 127;
         acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test36@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.162;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 3026469;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_37() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 146;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.11800000000000001;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 577216;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_38() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 104;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.146;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = null;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_39() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 149;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test39@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.146;
-        acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 728357;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_40() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 113;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test40@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.146;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 748674;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_41() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 118;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test41@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.08;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 6329391;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_42() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 114;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test42@pairwise.test';
-        acc.Loan_Interest_Rate__c = null;
-        acc.Loan_Type__c = 'Car Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 880365;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_43() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 108;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test43@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.11;
-        acc.Loan_Type__c = 'Car Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 988332;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_44() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 178;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test44@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.14;
-        acc.Loan_Type__c = '';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = null;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_45() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 114;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test45@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.136;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = null;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_46() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 132;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test46@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.14;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 722662;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_47() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 164;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test47@pairwise.test';
+        acc.Email__c = 'test22@pairwise.test';
         acc.Loan_Interest_Rate__c = 107;
-        acc.Loan_Type__c = '';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = null;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_48() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 169;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test48@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.09;
         acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
+        acc.Remaining_Loan_Amount__c = null;
         acc.Total_Loan_Amount__c = null;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -1769,717 +838,8 @@
     
 
     @isTest
-    public static void testAccount_49() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 114;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test49@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.136;
-        acc.Loan_Type__c = '';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = null;
-        
+    public static void testAccount_23() {
         Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_50() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 108;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test50@pairwise.test';
-        acc.Loan_Interest_Rate__c = 107;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 132526;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_51() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 177;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test51@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.11800000000000001;
-        acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 31759;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_52() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 166;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test52@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.1;
-        acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 921707;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_53() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 177;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test53@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.159;
-        acc.Loan_Type__c = '';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = null;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_54() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 179;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test54@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.136;
-        acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 6711;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_55() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 176;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.11;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 425238;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_56() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 162;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = null;
-        acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = null;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_57() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 123;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.14;
-        acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 8973484;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_58() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 106;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.14;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 78224;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_59() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 103;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.09;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 82680;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_60() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 140;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test60@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.07;
-        acc.Loan_Type__c = '';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = null;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_61() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 194;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.109;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 628346;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_62() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 144;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.10300000000000001;
-        acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 818837;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_63() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 165;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 107;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 33375;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_64() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 178;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test64@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.125;
-        acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 106216;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_65() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 194;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.162;
-        acc.Loan_Type__c = '';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = null;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_66() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 152;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test66@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.1;
-        acc.Loan_Type__c = 'Car Loan';
-        //acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 3890079;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_67() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 124;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test67@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.09;
-        acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 471478;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_68() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 177;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test68@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.159;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = null;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_69() {
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -2492,373 +852,23 @@
         acc.Balance__c = 175;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.162;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 68707;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_70() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 189;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.146;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 46296;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_71() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 113;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.11800000000000001;
-        acc.Loan_Type__c = '';
-        //acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = null;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_72() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 117;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.07;
-        acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 8118992;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_73() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 181;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.07;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 784962;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_74() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 179;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.07;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 94562;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_75() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 128;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.162;
-        acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 689537;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_76() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 114;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test76@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.11800000000000001;
-        acc.Loan_Type__c = 'Car Loan';
-        //acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = null;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_77() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 185;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.10300000000000001;
-        acc.Loan_Type__c = 'Car Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 115161;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_78() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 154;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.159;
-        acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 52029;
-        acc.Active__c = 'Yes';
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 6542215;
         
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_79() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
         
-        acc.Name = '';
-        acc.Balance__c = 187;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test79@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.1;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 31852;
-        
-        Test.startTest();
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -2867,211 +877,32 @@
     
 
     @isTest
-    public static void testAccount_80() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 180;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.084;
-        acc.Loan_Type__c = 'Car Loan';
-        //acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 30825;
-        acc.Active__c = 'Yes';
-        
+    public static void testAccount_24() {
         Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_81() {
         Account acc = new Account();
         acc.Name = '';
-        acc.Balance__c = 124;
+        acc.Balance__c = 115;
         acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
         acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test81@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.14;
+        acc.Email__c = 'test24@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.11900000000000001;
         acc.Loan_Type__c = 'Car Loan';
-        //acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 226056;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_82() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 110;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.109;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 121795;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_83() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 103;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.146;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 7690406;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_84() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 188;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test84@pairwise.test';
-        acc.Loan_Interest_Rate__c = null;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 460960;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_85() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 151;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test85@pairwise.test';
-        acc.Loan_Interest_Rate__c = null;
-        acc.Loan_Type__c = 'Home Loan';
         //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 4094781;
+        acc.Total_Loan_Amount__c = 4566967;
         acc.Active__c = 'Yes';
         
-        Test.startTest();
+        
         try {
             insert acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3080,7 +911,8 @@
     
 
     @isTest
-    public static void testAccount_86() {
+    public static void testAccount_25() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -3090,97 +922,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 133;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test86@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.1;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 804806;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_87() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 156;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Balance__c = 151;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.11900000000000001;
-        acc.Loan_Type__c = 'Car Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 743603;
-        acc.Active__c = 'Yes';
+        acc.Loan_Interest_Rate__c = 0.125;
+        acc.Loan_Type__c = '';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = null;
         
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_88() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
         
-        acc.Name = '';
-        acc.Balance__c = 162;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test88@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.10300000000000001;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 807810;
-        
-        Test.startTest();
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3189,7 +950,8 @@
     
 
     @isTest
-    public static void testAccount_89() {
+    public static void testAccount_26() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -3199,26 +961,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 189;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test89@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.10300000000000001;
+        acc.Balance__c = 124;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test26@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.146;
         acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 41927;
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 3272936;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3227,7 +989,388 @@
     
 
     @isTest
-    public static void testAccount_90() {
+    public static void testAccount_27() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 161;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test27@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.162;
+        acc.Loan_Type__c = 'Car Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 224050;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_28() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 123;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.08;
+        acc.Loan_Type__c = 'Home Loan';
+        //acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = null;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_29() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 101;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.084;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 118142;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_30() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 149;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 107;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 684812;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_31() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 120;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.08;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 70292;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_32() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 170;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test32@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.109;
+        acc.Loan_Type__c = '';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = null;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_33() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 137;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test33@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.11900000000000001;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 5361560;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_34() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 156;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = null;
+        acc.Loan_Type__c = '';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = null;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_35() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 159;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test35@pairwise.test';
+        acc.Loan_Interest_Rate__c = null;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 9347448;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_36() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 165;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test36@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.162;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 3842528;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_37() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -3242,21 +1385,1968 @@
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.11800000000000001;
         acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 8305922;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 809891;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_38() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 153;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.146;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = null;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_39() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 164;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test39@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.146;
+        acc.Loan_Type__c = 'Home Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 741965;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_40() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 178;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test40@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.146;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 63518;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_41() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 120;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test41@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.08;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 8970440;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_42() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 160;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test42@pairwise.test';
+        acc.Loan_Interest_Rate__c = null;
+        acc.Loan_Type__c = 'Car Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 745241;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_43() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 180;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test43@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.11;
+        acc.Loan_Type__c = 'Car Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 681043;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_44() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 142;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test44@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.14;
+        acc.Loan_Type__c = '';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = null;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_45() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 180;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test45@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.136;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = null;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_46() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 192;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test46@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.14;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 329378;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_47() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 150;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test47@pairwise.test';
+        acc.Loan_Interest_Rate__c = 107;
+        acc.Loan_Type__c = '';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = null;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_48() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 186;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test48@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.09;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = null;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_49() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 110;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test49@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.136;
+        acc.Loan_Type__c = '';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = null;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_50() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 162;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test50@pairwise.test';
+        acc.Loan_Interest_Rate__c = 107;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 295503;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_51() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 174;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test51@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.11800000000000001;
+        acc.Loan_Type__c = 'Home Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 18751;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_52() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 117;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test52@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.1;
+        acc.Loan_Type__c = 'Home Loan';
+        //acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 896049;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_53() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 167;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test53@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.159;
+        acc.Loan_Type__c = '';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = null;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_54() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 151;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test54@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.136;
+        acc.Loan_Type__c = 'Home Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 312112;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_55() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 196;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.11;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 265146;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_56() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 134;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = null;
+        acc.Loan_Type__c = 'Home Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = null;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_57() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 197;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.14;
+        acc.Loan_Type__c = 'Home Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 7206186;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_58() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 190;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.14;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 63054;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_59() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 188;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.09;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 90919;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_60() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 125;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test60@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.07;
+        acc.Loan_Type__c = '';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = null;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_61() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 172;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.109;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 914057;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_62() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 112;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.10300000000000001;
+        acc.Loan_Type__c = 'Home Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 767056;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_63() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 113;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 107;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 14320;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_64() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 158;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test64@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.125;
+        acc.Loan_Type__c = 'Home Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 157082;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_65() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 200;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.162;
+        acc.Loan_Type__c = '';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = null;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_66() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 121;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test66@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.1;
+        acc.Loan_Type__c = 'Car Loan';
+        //acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 4057336;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_67() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 191;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test67@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.09;
+        acc.Loan_Type__c = 'Home Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 411023;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_68() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 143;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test68@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.159;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = null;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_69() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 169;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.162;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 72925;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_70() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 100;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.146;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 75549;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_71() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 114;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.11800000000000001;
+        acc.Loan_Type__c = '';
+        //acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = null;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_72() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 154;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.07;
+        acc.Loan_Type__c = 'Home Loan';
+        //acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 8889633;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_73() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 165;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.07;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 831537;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_74() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 107;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.07;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 34157;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_75() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 146;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.162;
+        acc.Loan_Type__c = 'Home Loan';
+        //acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 583641;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_76() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 192;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test76@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.11800000000000001;
+        acc.Loan_Type__c = 'Car Loan';
+        //acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = null;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_77() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 120;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.10300000000000001;
+        acc.Loan_Type__c = 'Car Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 492805;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_78() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 155;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.159;
+        acc.Loan_Type__c = 'Home Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 64029;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_79() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 180;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test79@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.1;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 27252;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_80() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 195;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.084;
+        acc.Loan_Type__c = 'Car Loan';
+        //acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 50695;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_81() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 112;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test81@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.14;
+        acc.Loan_Type__c = 'Car Loan';
+        //acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 439665;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_82() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 100;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.109;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 337787;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_83() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 177;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.146;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 9591298;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_84() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 100;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test84@pairwise.test';
+        acc.Loan_Interest_Rate__c = null;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 443778;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_85() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 128;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test85@pairwise.test';
+        acc.Loan_Interest_Rate__c = null;
+        acc.Loan_Type__c = 'Home Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 4891531;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_86() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 130;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test86@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.1;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 316323;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_87() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 120;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.11900000000000001;
+        acc.Loan_Type__c = 'Car Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 956322;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_88() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 148;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test88@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.10300000000000001;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 825113;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_89() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 112;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test89@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.10300000000000001;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 27282;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_90() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 190;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.11800000000000001;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 9449580;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3266,30 +3356,31 @@
 
     @isTest
     public static void testAccount_91() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = '';
-        acc.Balance__c = 112;
+        acc.Balance__c = 177;
         acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
         acc.Calculated_Interest__c = null;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 107;
         acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 352963;
+        //acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 479387;
         acc.Active__c = 'Yes';
         
-        Test.startTest();
+        
         try {
             insert acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3299,6 +3390,7 @@
 
     @isTest
     public static void testAccount_92() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -3308,26 +3400,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 160;
+        acc.Balance__c = 138;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.136;
         acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 64327;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 30246;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3337,6 +3429,7 @@
 
     @isTest
     public static void testAccount_93() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -3346,26 +3439,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 156;
+        acc.Balance__c = 104;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.125;
         acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 561672;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 694453;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3375,6 +3468,7 @@
 
     @isTest
     public static void testAccount_94() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -3384,7 +3478,7 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 103;
+        acc.Balance__c = 192;
         acc.Calculated_Interest__c = null;
         acc.Email__c = 'test94@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.084;
@@ -3392,18 +3486,18 @@
         acc.Remaining_Loan_Amount__c = 15000000;
         acc.Total_Loan_Amount__c = null;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3413,6 +3507,7 @@
 
     @isTest
     public static void testAccount_95() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -3422,26 +3517,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 145;
+        acc.Balance__c = 176;
         acc.Calculated_Interest__c = null;
         acc.Email__c = 'test95@pairwise.test';
         acc.Loan_Interest_Rate__c = null;
         acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 4742155;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 2180539;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3451,6 +3546,7 @@
 
     @isTest
     public static void testAccount_96() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -3460,26 +3556,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 189;
+        acc.Balance__c = 169;
         acc.Calculated_Interest__c = null;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.09;
         acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 114956;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 781758;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3489,6 +3585,7 @@
 
     @isTest
     public static void testAccount_97() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -3498,26 +3595,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 149;
+        acc.Balance__c = 144;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.146;
         acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 256253;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 434895;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3527,6 +3624,7 @@
 
     @isTest
     public static void testAccount_98() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -3536,26 +3634,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 191;
+        acc.Balance__c = 153;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = 'test98@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.159;
         acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 3647950;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 3881926;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3565,9 +3663,10 @@
 
     @isTest
     public static void testAccount_99() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = '';
-        acc.Balance__c = 166;
+        acc.Balance__c = 187;
         acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
         acc.Calculated_Interest__c = null;
         acc.Email__c = '';
@@ -3577,18 +3676,18 @@
         acc.Total_Loan_Amount__c = null;
         acc.Active__c = 'Yes';
         
-        Test.startTest();
+        
         try {
             insert acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3598,6 +3697,7 @@
 
     @isTest
     public static void testAccount_100() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -3607,26 +3707,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 194;
+        acc.Balance__c = 170;
         acc.Calculated_Interest__c = null;
         acc.Email__c = 'test100@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.125;
         acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 9812582;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 5805265;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3636,6 +3736,7 @@
 
     @isTest
     public static void testAccount_101() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -3645,26 +3746,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 112;
+        acc.Balance__c = 172;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.10300000000000001;
         acc.Loan_Type__c = '';
-        acc.Remaining_Loan_Amount__c = ;
+        acc.Remaining_Loan_Amount__c = null;
         acc.Total_Loan_Amount__c = null;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3674,30 +3775,31 @@
 
     @isTest
     public static void testAccount_102() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = '';
-        acc.Balance__c = 193;
+        acc.Balance__c = 136;
         acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.084;
         acc.Loan_Type__c = 'Car Loan';
         //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 859107;
+        acc.Total_Loan_Amount__c = 771391;
         acc.Active__c = 'Yes';
         
-        Test.startTest();
+        
         try {
             insert acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3707,6 +3809,7 @@
 
     @isTest
     public static void testAccount_103() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -3716,26 +3819,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 113;
+        acc.Balance__c = 129;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = 'test103@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.1;
         acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 195276;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 111602;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3745,6 +3848,7 @@
 
     @isTest
     public static void testAccount_104() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -3754,26 +3858,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 121;
+        acc.Balance__c = 172;
         acc.Calculated_Interest__c = null;
         acc.Email__c = 'test104@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.14;
         acc.Loan_Type__c = 'Home Loan';
         acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 832638;
+        acc.Total_Loan_Amount__c = 614577;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3783,6 +3887,7 @@
 
     @isTest
     public static void testAccount_105() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -3792,26 +3897,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 168;
+        acc.Balance__c = 146;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = 'test105@pairwise.test';
         acc.Loan_Interest_Rate__c = null;
         acc.Loan_Type__c = '';
-        acc.Remaining_Loan_Amount__c = ;
+        acc.Remaining_Loan_Amount__c = null;
         acc.Total_Loan_Amount__c = null;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3821,30 +3926,31 @@
 
     @isTest
     public static void testAccount_106() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = '';
-        acc.Balance__c = 183;
+        acc.Balance__c = 148;
         acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.084;
         acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 814106;
+        //acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 708097;
         acc.Active__c = 'Yes';
         
-        Test.startTest();
+        
         try {
             insert acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3854,6 +3960,7 @@
 
     @isTest
     public static void testAccount_107() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -3863,26 +3970,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 113;
+        acc.Balance__c = 177;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.11900000000000001;
         acc.Loan_Type__c = '';
-        acc.Remaining_Loan_Amount__c = ;
+        acc.Remaining_Loan_Amount__c = null;
         acc.Total_Loan_Amount__c = null;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3892,6 +3999,7 @@
 
     @isTest
     public static void testAccount_108() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -3901,26 +4009,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 118;
+        acc.Balance__c = 143;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = 'test108@pairwise.test';
         acc.Loan_Interest_Rate__c = null;
         acc.Loan_Type__c = 'Car Loan';
         acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 250659;
+        acc.Total_Loan_Amount__c = 256616;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3930,6 +4038,7 @@
 
     @isTest
     public static void testAccount_109() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -3939,26 +4048,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 183;
+        acc.Balance__c = 113;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = 'test109@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.11900000000000001;
         acc.Loan_Type__c = 'Home Loan';
         acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 21820;
+        acc.Total_Loan_Amount__c = 97757;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -3968,6 +4077,7 @@
 
     @isTest
     public static void testAccount_110() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -3977,26 +4087,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 187;
+        acc.Balance__c = 167;
         acc.Calculated_Interest__c = null;
         acc.Email__c = 'test110@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.146;
         acc.Loan_Type__c = '';
-        acc.Remaining_Loan_Amount__c = ;
+        acc.Remaining_Loan_Amount__c = null;
         acc.Total_Loan_Amount__c = null;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -4006,30 +4116,31 @@
 
     @isTest
     public static void testAccount_111() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = '';
-        acc.Balance__c = 167;
+        acc.Balance__c = 152;
         acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.109;
         acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = ;
+        //acc.Remaining_Loan_Amount__c = null;
         acc.Total_Loan_Amount__c = null;
         acc.Active__c = 'Yes';
         
-        Test.startTest();
+        
         try {
             insert acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -4039,30 +4150,31 @@
 
     @isTest
     public static void testAccount_112() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = '';
-        acc.Balance__c = 176;
+        acc.Balance__c = 199;
         acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
         acc.Calculated_Interest__c = 7;
         acc.Email__c = 'test112@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.109;
         acc.Loan_Type__c = 'Home Loan';
         //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 40553;
+        acc.Total_Loan_Amount__c = 88315;
         acc.Active__c = 'Yes';
         
-        Test.startTest();
+        
         try {
             insert acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -4072,6 +4184,7 @@
 
     @isTest
     public static void testAccount_113() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -4081,26 +4194,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 163;
+        acc.Balance__c = 131;
         acc.Calculated_Interest__c = null;
         acc.Email__c = 'test113@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.11;
         acc.Loan_Type__c = 'Home Loan';
         acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 2094311;
+        acc.Total_Loan_Amount__c = 3311449;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -4110,6 +4223,7 @@
 
     @isTest
     public static void testAccount_114() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -4119,26 +4233,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 123;
+        acc.Balance__c = 120;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.084;
         acc.Loan_Type__c = 'Car Loan';
         acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 757667;
+        acc.Total_Loan_Amount__c = 894673;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -4148,6 +4262,7 @@
 
     @isTest
     public static void testAccount_115() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -4157,26 +4272,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 128;
+        acc.Balance__c = 153;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = null;
         acc.Loan_Type__c = 'Car Loan';
         acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 321233;
+        acc.Total_Loan_Amount__c = 17833;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -4186,6 +4301,7 @@
 
     @isTest
     public static void testAccount_116() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -4195,26 +4311,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 105;
+        acc.Balance__c = 114;
         acc.Calculated_Interest__c = null;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.09;
         acc.Loan_Type__c = 'Car Loan';
         acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 4694941;
+        acc.Total_Loan_Amount__c = 3254881;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -4224,6 +4340,7 @@
 
     @isTest
     public static void testAccount_117() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -4233,26 +4350,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 109;
+        acc.Balance__c = 199;
         acc.Calculated_Interest__c = null;
         acc.Email__c = 'test117@pairwise.test';
         acc.Loan_Interest_Rate__c = null;
         acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
+        acc.Remaining_Loan_Amount__c = null;
         acc.Total_Loan_Amount__c = null;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -4262,6 +4379,923 @@
 
     @isTest
     public static void testAccount_118() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 106;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.09;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 442977;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_119() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 143;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test119@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.136;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 451373;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_120() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 150;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.146;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 742012;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_121() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 171;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.11900000000000001;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 744646;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_122() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 100;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.08;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 993137;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_123() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 144;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.084;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 7351418;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_124() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 124;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.14;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 2671593;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_125() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 141;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test125@pairwise.test';
+        acc.Loan_Interest_Rate__c = 107;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 8189043;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_126() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 178;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test126@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.08;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 1172362;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_127() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 196;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.136;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 5047292;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_128() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 191;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test128@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.09;
+        acc.Loan_Type__c = 'Home Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 863514;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_129() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 186;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test129@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.11;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 570037;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_130() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 175;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.09;
+        acc.Loan_Type__c = '';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = null;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_131() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 198;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = null;
+        acc.Loan_Type__c = 'Car Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 5221855;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_132() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 166;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test132@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.11800000000000001;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 963354;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_133() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 136;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test133@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.11900000000000001;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = null;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_134() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 118;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = null;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 892978;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_135() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 188;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.1;
+        acc.Loan_Type__c = '';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = null;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_136() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 167;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.125;
+        acc.Loan_Type__c = 'Car Loan';
+        //acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 623041;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_137() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 114;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test137@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.159;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 613746;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_138() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 134;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.08;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 807055;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_139() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 196;
+        acc.Calculated_Interest__c = 7;
+        acc.Email__c = 'test139@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.162;
+        acc.Loan_Type__c = 'Car Loan';
+        acc.Remaining_Loan_Amount__c = 15000000;
+        acc.Total_Loan_Amount__c = 979417;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_140() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = '';
+        acc.Balance__c = 114;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = 'test140@pairwise.test';
+        acc.Loan_Interest_Rate__c = 0.162;
+        acc.Loan_Type__c = 'Home Loan';
+        //acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 311359;
+        acc.Active__c = 'Yes';
+        
+        
+        try {
+            insert acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_141() {
+        Test.startTest();
+        Account acc = new Account();
+        acc.Name = 'ToUpdate Account';
+        acc.Balance__c = 100;
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
+        acc.Email__c = 'testUpdate@pairwise.test';
+        acc.Active__c = 'Yes';
+        insert acc;
+        
+        acc.Name = '';
+        acc.Balance__c = 190;
+        acc.Calculated_Interest__c = null;
+        acc.Email__c = '';
+        acc.Loan_Interest_Rate__c = 0.159;
+        acc.Loan_Type__c = 'Home Loan';
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 782923;
+        
+        
+        try {
+            update acc;
+            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+        } catch (Exception e) {
+            System.assert(false, e.getMessage());
+        }
+        Test.stopTest();
+    }
+    
+
+    @isTest
+    public static void testAccount_142() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -4273,916 +5307,24 @@
         acc.Name = '';
         acc.Balance__c = 102;
         acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.09;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 293061;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_119() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 122;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test119@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.136;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 494944;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_120() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 198;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.146;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 943718;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_121() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 173;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.11900000000000001;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 922696;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_122() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 106;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.08;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 788274;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_123() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 142;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.084;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 5629654;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_124() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 184;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.14;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 2344322;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_125() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 110;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test125@pairwise.test';
-        acc.Loan_Interest_Rate__c = 107;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 5351401;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_126() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 195;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test126@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.08;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 4312526;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_127() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 145;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.136;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 9049568;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_128() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 139;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test128@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.09;
-        acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 505417;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_129() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 100;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test129@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.11;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 177114;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_130() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 119;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.09;
-        acc.Loan_Type__c = '';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = null;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_131() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 160;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = null;
-        acc.Loan_Type__c = 'Car Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 8857163;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_132() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Negative').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 171;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test132@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.11800000000000001;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 51948;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_133() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 185;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test133@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.11900000000000001;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = null;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_134() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 119;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = null;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 954718;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_135() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 161;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.1;
-        acc.Loan_Type__c = '';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = null;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_136() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 132;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.125;
-        acc.Loan_Type__c = 'Car Loan';
-        //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 986603;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_137() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 180;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test137@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.159;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 856217;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_138() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Blank').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 141;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.08;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 935658;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_139() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 104;
-        acc.Calculated_Interest__c = 7;
-        acc.Email__c = 'test139@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.162;
-        acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 750383;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_140() {
-        Account acc = new Account();
-        acc.Name = '';
-        acc.Balance__c = 140;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = 'test140@pairwise.test';
-        acc.Loan_Interest_Rate__c = 0.162;
-        acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 236875;
-        acc.Active__c = 'Yes';
-        
-        Test.startTest();
-        try {
-            insert acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_141() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 124;
-        acc.Calculated_Interest__c = null;
-        acc.Email__c = '';
-        acc.Loan_Interest_Rate__c = 0.159;
-        acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 301877;
-        
-        Test.startTest();
-        try {
-            update acc;
-            Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
-        } catch (Exception e) {
-            System.assert(false, e.getMessage());
-        }
-        Test.stopTest();
-    }
-    
-
-    @isTest
-    public static void testAccount_142() {
-        Account acc = new Account();
-        acc.Name = 'ToUpdate Account';
-        acc.Balance__c = 100;
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
-        acc.Email__c = 'testUpdate@pairwise.test';
-        acc.Active__c = 'Yes';
-        insert acc;
-        
-        acc.Name = '';
-        acc.Balance__c = 119;
-        acc.Calculated_Interest__c = 7;
         acc.Email__c = 'test142@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.159;
         acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 213669;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 442680;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5192,30 +5334,31 @@
 
     @isTest
     public static void testAccount_143() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = '';
-        acc.Balance__c = 152;
+        acc.Balance__c = 140;
         acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = null;
         acc.Loan_Type__c = 'Home Loan';
         //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 908908;
+        acc.Total_Loan_Amount__c = 568023;
         acc.Active__c = 'Yes';
         
-        Test.startTest();
+        
         try {
             insert acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5225,6 +5368,7 @@
 
     @isTest
     public static void testAccount_144() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -5234,26 +5378,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 139;
+        acc.Balance__c = 125;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.10300000000000001;
         acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
+        acc.Remaining_Loan_Amount__c = null;
         acc.Total_Loan_Amount__c = null;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5263,6 +5407,7 @@
 
     @isTest
     public static void testAccount_145() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -5272,26 +5417,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 164;
+        acc.Balance__c = 100;
         acc.Calculated_Interest__c = null;
         acc.Email__c = 'test145@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.09;
         acc.Loan_Type__c = 'Car Loan';
         acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 5381567;
+        acc.Total_Loan_Amount__c = 6748564;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5301,6 +5446,7 @@
 
     @isTest
     public static void testAccount_146() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -5310,26 +5456,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 111;
+        acc.Balance__c = 183;
         acc.Calculated_Interest__c = null;
         acc.Email__c = 'test146@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.084;
         acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
+        acc.Remaining_Loan_Amount__c = null;
         acc.Total_Loan_Amount__c = null;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5339,30 +5485,31 @@
 
     @isTest
     public static void testAccount_147() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = '';
-        acc.Balance__c = 193;
+        acc.Balance__c = 170;
         acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
         acc.Calculated_Interest__c = null;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.136;
         acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 4630186;
+        //acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 3468570;
         acc.Active__c = 'Yes';
         
-        Test.startTest();
+        
         try {
             insert acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5372,6 +5519,7 @@
 
     @isTest
     public static void testAccount_148() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -5381,26 +5529,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 143;
+        acc.Balance__c = 133;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = 'test148@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.159;
         acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 740809;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 707737;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5410,6 +5558,7 @@
 
     @isTest
     public static void testAccount_149() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -5419,26 +5568,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 109;
+        acc.Balance__c = 183;
         acc.Calculated_Interest__c = null;
         acc.Email__c = 'test149@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.11800000000000001;
         acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 439843;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 232001;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5448,6 +5597,7 @@
 
     @isTest
     public static void testAccount_150() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -5457,26 +5607,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 141;
+        acc.Balance__c = 155;
         acc.Calculated_Interest__c = null;
         acc.Email__c = 'test150@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.11;
         acc.Loan_Type__c = 'Car Loan';
         acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 9159498;
+        acc.Total_Loan_Amount__c = 9074391;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5486,6 +5636,7 @@
 
     @isTest
     public static void testAccount_151() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -5495,26 +5646,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 193;
+        acc.Balance__c = 166;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.11900000000000001;
         acc.Loan_Type__c = 'Car Loan';
         acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 112910;
+        acc.Total_Loan_Amount__c = 332568;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5524,6 +5675,7 @@
 
     @isTest
     public static void testAccount_152() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -5533,26 +5685,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 168;
+        acc.Balance__c = 172;
         acc.Calculated_Interest__c = null;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.136;
         acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 969754;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 556483;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5562,6 +5714,7 @@
 
     @isTest
     public static void testAccount_153() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -5571,26 +5724,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 113;
+        acc.Balance__c = 184;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = 'test153@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.109;
         acc.Loan_Type__c = 'Car Loan';
         acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 863965;
+        acc.Total_Loan_Amount__c = 222497;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5600,30 +5753,31 @@
 
     @isTest
     public static void testAccount_154() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = '';
-        acc.Balance__c = 154;
+        acc.Balance__c = 181;
         acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.11900000000000001;
         acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 396462;
+        //acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 418890;
         acc.Active__c = 'Yes';
         
-        Test.startTest();
+        
         try {
             insert acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5633,6 +5787,7 @@
 
     @isTest
     public static void testAccount_155() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -5642,26 +5797,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 121;
+        acc.Balance__c = 136;
         acc.Calculated_Interest__c = null;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.109;
         acc.Loan_Type__c = 'Car Loan';
         acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 8681504;
+        acc.Total_Loan_Amount__c = 6015189;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5671,6 +5826,7 @@
 
     @isTest
     public static void testAccount_156() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -5680,26 +5836,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 180;
+        acc.Balance__c = 116;
         acc.Calculated_Interest__c = null;
         acc.Email__c = 'test156@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.07;
         acc.Loan_Type__c = 'Car Loan';
         acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 1645591;
+        acc.Total_Loan_Amount__c = 4857269;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5709,6 +5865,7 @@
 
     @isTest
     public static void testAccount_157() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -5718,26 +5875,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 152;
+        acc.Balance__c = 138;
         acc.Calculated_Interest__c = null;
         acc.Email__c = 'test157@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.11800000000000001;
         acc.Loan_Type__c = 'Home Loan';
         acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 2929767;
+        acc.Total_Loan_Amount__c = 1681998;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5747,30 +5904,31 @@
 
     @isTest
     public static void testAccount_158() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = '';
-        acc.Balance__c = 151;
+        acc.Balance__c = 105;
         acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
         acc.Calculated_Interest__c = null;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.162;
         acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = ;
+        //acc.Remaining_Loan_Amount__c = null;
         acc.Total_Loan_Amount__c = null;
         acc.Active__c = 'Yes';
         
-        Test.startTest();
+        
         try {
             insert acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5780,6 +5938,7 @@
 
     @isTest
     public static void testAccount_159() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -5789,26 +5948,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 193;
+        acc.Balance__c = 195;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = 'test159@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.08;
         acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 458605;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 366425;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5818,30 +5977,31 @@
 
     @isTest
     public static void testAccount_160() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = '';
-        acc.Balance__c = 194;
+        acc.Balance__c = 156;
         acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.125;
         acc.Loan_Type__c = 'Car Loan';
-        //acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 788759;
+        //acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 294605;
         acc.Active__c = 'Yes';
         
-        Test.startTest();
+        
         try {
             insert acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5851,30 +6011,31 @@
 
     @isTest
     public static void testAccount_161() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = '';
-        acc.Balance__c = 111;
+        acc.Balance__c = 190;
         acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
         acc.Calculated_Interest__c = 7;
         acc.Email__c = 'test161@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.14;
         acc.Loan_Type__c = 'Home Loan';
         //acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 612114;
+        acc.Total_Loan_Amount__c = 574614;
         acc.Active__c = 'Yes';
         
-        Test.startTest();
+        
         try {
             insert acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5884,6 +6045,7 @@
 
     @isTest
     public static void testAccount_162() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -5893,26 +6055,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 117;
+        acc.Balance__c = 124;
         acc.Calculated_Interest__c = null;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.09;
         acc.Loan_Type__c = 'Car Loan';
         acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 847301;
+        acc.Total_Loan_Amount__c = 637864;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5922,9 +6084,10 @@
 
     @isTest
     public static void testAccount_163() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = '';
-        acc.Balance__c = 195;
+        acc.Balance__c = 186;
         acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$0').getRecordTypeId();
         acc.Calculated_Interest__c = null;
         acc.Email__c = 'test163@pairwise.test';
@@ -5934,18 +6097,18 @@
         acc.Total_Loan_Amount__c = null;
         acc.Active__c = 'Yes';
         
-        Test.startTest();
+        
         try {
             insert acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5955,30 +6118,31 @@
 
     @isTest
     public static void testAccount_164() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = '';
-        acc.Balance__c = 186;
+        acc.Balance__c = 134;
         acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
         acc.Calculated_Interest__c = null;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.125;
         acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 10286;
+        //acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 50292;
         acc.Active__c = 'Yes';
         
-        Test.startTest();
+        
         try {
             insert acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -5988,6 +6152,7 @@
 
     @isTest
     public static void testAccount_165() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -5997,26 +6162,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 181;
+        acc.Balance__c = 127;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = null;
         acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 49196;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 56500;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -6026,6 +6191,7 @@
 
     @isTest
     public static void testAccount_166() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -6035,26 +6201,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 155;
+        acc.Balance__c = 141;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = 'test166@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.084;
         acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 2246081;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 1788973;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -6064,6 +6230,7 @@
 
     @isTest
     public static void testAccount_167() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -6073,26 +6240,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 146;
+        acc.Balance__c = 110;
         acc.Calculated_Interest__c = null;
         acc.Email__c = 'test167@pairwise.test';
         acc.Loan_Interest_Rate__c = null;
         acc.Loan_Type__c = 'Car Loan';
         acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 621280;
+        acc.Total_Loan_Amount__c = 729227;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -6102,6 +6269,7 @@
 
     @isTest
     public static void testAccount_168() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -6111,26 +6279,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 158;
+        acc.Balance__c = 141;
         acc.Calculated_Interest__c = null;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.11;
         acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
+        acc.Remaining_Loan_Amount__c = null;
         acc.Total_Loan_Amount__c = null;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -6140,6 +6308,7 @@
 
     @isTest
     public static void testAccount_169() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -6149,26 +6318,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 184;
+        acc.Balance__c = 195;
         acc.Calculated_Interest__c = 7;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.11800000000000001;
         acc.Loan_Type__c = 'Car Loan';
         acc.Remaining_Loan_Amount__c = 15000000;
-        acc.Total_Loan_Amount__c = 908260;
+        acc.Total_Loan_Amount__c = 893150;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -6178,6 +6347,7 @@
 
     @isTest
     public static void testAccount_170() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -6187,26 +6357,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 188;
+        acc.Balance__c = 196;
         acc.Calculated_Interest__c = null;
         acc.Email__c = 'test170@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.10300000000000001;
         acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 1944396;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 3771689;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -6216,30 +6386,31 @@
 
     @isTest
     public static void testAccount_171() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = '';
-        acc.Balance__c = 120;
+        acc.Balance__c = 198;
         acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('>=$100').getRecordTypeId();
         acc.Calculated_Interest__c = null;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.109;
         acc.Loan_Type__c = 'Home Loan';
-        //acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 929088;
+        //acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 590418;
         acc.Active__c = 'Yes';
         
-        Test.startTest();
+        
         try {
             insert acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -6249,6 +6420,7 @@
 
     @isTest
     public static void testAccount_172() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -6258,26 +6430,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 143;
+        acc.Balance__c = 200;
         acc.Calculated_Interest__c = null;
         acc.Email__c = 'test172@pairwise.test';
         acc.Loan_Interest_Rate__c = 0.1;
         acc.Loan_Type__c = 'Car Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 6898922;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 6681616;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
@@ -6287,6 +6459,7 @@
 
     @isTest
     public static void testAccount_173() {
+        Test.startTest();
         Account acc = new Account();
         acc.Name = 'ToUpdate Account';
         acc.Balance__c = 100;
@@ -6296,26 +6469,26 @@
         insert acc;
         
         acc.Name = '';
-        acc.Balance__c = 191;
+        acc.Balance__c = 124;
         acc.Calculated_Interest__c = null;
         acc.Email__c = '';
         acc.Loan_Interest_Rate__c = 0.109;
         acc.Loan_Type__c = 'Home Loan';
-        acc.Remaining_Loan_Amount__c = ;
-        acc.Total_Loan_Amount__c = 4013423;
+        acc.Remaining_Loan_Amount__c = null;
+        acc.Total_Loan_Amount__c = 3861406;
         
-        Test.startTest();
+        
         try {
             update acc;
             Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
-            System.assert(acc.Name, testAcc.Name);
-            System.assert(acc.Balance__c, testAcc.Balance__c);
-            System.assert(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
-            System.assert(acc.Email__c, testAcc.Email__c);
-            System.assert(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
-            System.assert(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
-            System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
+            System.assertEquals(acc.Name, testAcc.Name);
+            System.assertEquals(acc.Balance__c, testAcc.Balance__c);
+            System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
+            System.assertEquals(acc.Email__c, testAcc.Email__c);
+            System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
+            System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
+            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
         }
