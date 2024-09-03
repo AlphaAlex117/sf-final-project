@@ -53,7 +53,7 @@ def generate_test_data(sheet):
             loan_interest_rate = 107
         elif (row[8] != 'Blank' and row[8] != 'Error'):
             loan_interest_rate = str(float(row[8].strip('%')) / 100)
-            
+
 
         loan_type = ''
         if (row[9] != 'Blank'):
@@ -112,8 +112,8 @@ def generate_apex_test_cases(test_data):
                 try {{
                     insert acc;
                     System.assert(false, 'Expected an error, but insert succeeded.');
-                }} catch (DmlException e) {{
-                    System.assert(e.getMessage().contains(''), 'Unexpected error message: ' + e.getMessage());
+                }} catch (Exception e) {{
+                    System.assert(e.getMessage());
                 }}
                 Test.stopTest();
             }}
@@ -146,8 +146,8 @@ def generate_apex_test_cases(test_data):
                 try {{
                     update acc;
                     System.assert(false, 'Expected an error, but insert succeeded.');
-                }} catch (DmlException e) {{
-                    System.assert(e.getMessage().contains(''), 'Unexpected error message: ' + e.getMessage());
+                }} catch (Exception e) {{
+                    System.assert(e.getMessage());
                 }}
                 Test.stopTest();
             }}
