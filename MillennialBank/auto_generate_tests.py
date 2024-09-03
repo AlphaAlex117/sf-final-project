@@ -54,12 +54,29 @@ def generate_test_data(sheet):
         else:
             loan_interest_rate = row[8]
         
-        
-        loan_type = row[9]
 
-        remaining_loan_amount = None  # Should fail if it is not blank
+        loan_type = ''
+        if (row[9] != 'Blank'):
+            loan_type = row[9]
         
-        total_loan_amount = row[5] if row[5] else random.randint(0, 100)  # Random value if range not specified
+
+        remaining_loan_amount = ''
+        if (row[10] == 'Anything Else'):
+            remaining_loan_amount = 15000000
+        
+        total_loan_amount = ''
+        if (row[11] == '$0 to $100,000'):
+            total_loan_amount = random.randint(0, 100000)
+        elif (row[11] == '$100,001 to $500,000'):
+            total_loan_amount = random.randint(100001, 500000)
+        elif (row[11] == '>$500,000' or row[11] == '$500,001 to $1,000,000'):
+            total_loan_amount = random.randint(500001, 1000000)
+        elif (row[11] == '$0 to $1,000,000'):
+            total_loan_amount = random.randint(0, 1000000)
+        elif (row[11] == '$1,000,001 to $5,000,000'):
+            total_loan_amount = random.randint(1000001, 5000000)
+        elif (row[11] == '$5,000,001 to $10,000,000'):
+            total_loan_amount = random.randint(5000001, 10000000)
         
         
         active = row[6]
