@@ -14,7 +14,7 @@ export default class FeedbackForm extends LightningElement {
             this.recordId = (currentPageReference.state.recordId == undefined) ? currentPageReference.attributes.recordId : currentPageReference.state.recordId;
             getMonth()
             .then((month) => {
-                this.isQuarter = [1, 4, 7, 10].includes(month);
+                this.isQuarter = [1, 4, 9, 10].includes(month);
                 console.log("Hey", this.recordId, this.isQuarter);
             })
             .catch((error) => {
