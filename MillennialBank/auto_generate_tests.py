@@ -42,7 +42,7 @@ def generate_test_data(sheet):
         # Get Test Email from file. If Normal, then add a valid email.
         email = ''
         if (row[6] == 'Normal'):
-            email = 'test' + test_number + '@pairwise.test'
+            email = 'test' + str(test_number) + '@pairwise.test'
 
         # Get Test Interest Rate from file.
         interest_rate = row[7]
@@ -53,7 +53,7 @@ def generate_test_data(sheet):
             loan_interest_rate = 107
         else:
             loan_interest_rate = row[8]
-        
+    
 
         loan_type = ''
         if (row[9] != 'Blank'):
@@ -63,7 +63,8 @@ def generate_test_data(sheet):
         remaining_loan_amount = ''
         if (row[10] == 'Anything Else'):
             remaining_loan_amount = 15000000
-        
+
+
         total_loan_amount = ''
         if (row[11] == '$0 to $100,000'):
             total_loan_amount = random.randint(0, 100000)
@@ -77,15 +78,12 @@ def generate_test_data(sheet):
             total_loan_amount = random.randint(1000001, 5000000)
         elif (row[11] == '$5,000,001 to $10,000,000'):
             total_loan_amount = random.randint(5000001, 10000000)
-        
-        
-        active = row[6]
 
-        if record_type != 'Salary Account' and balance > 0:
-            balance = 'FAIL'  # If Record Type is not Salary Account, balance should be 0
 
-        test_data.append([test_number, dml_type, name, balance, record_type, calculated_interest, email, interest_rate, loan_interest_rate, total_loan_amount, active, remaining_loan_amount])
+        active = row[12]
 
+
+        test_data.append([test_number, dml_type, name, balance, record_type, calculated_interest, email, interest_rate, loan_interest_rate, loan_type, remaining_loan_amount, total_loan_amount, active])
     return test_data
 
 # Function to generate Apex test cases
@@ -123,9 +121,10 @@ def generate_apex_test_cases(test_data):
 
 # Main function to run the script
 def main():
-    excel_path = "C:\Users\\alexa\Downloads\Ironhack Project 3 Account(2).xlsx"  # TEST INPUT PATH
+    excel_path = "C:/Users/alexa/Downloads/Ironhack Project 3 Account(2).xlsx"
     sheet = load_excel(excel_path)
     test_data = generate_test_data(sheet)
+    #print(test_data)
     apex_test_cases = generate_apex_test_cases(test_data)
     
     with open("GeneratedApexTests.cls", "w") as file:
