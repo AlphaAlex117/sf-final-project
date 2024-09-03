@@ -23,7 +23,7 @@ def generate_test_data(sheet):
             name = 'Pairwise Test Account ' + test_number
         
         # Get Test Balance from file. If Negative, then add a negative value. Else if add a positive number.
-        balance = ''
+        balance = 'null'
         if (row[3] == 'Negative'):
             balance = -7
         elif (row[3] == '>=$0'):
@@ -35,7 +35,7 @@ def generate_test_data(sheet):
         record_type = row[4]
 
         # Get Test Calculated Interest from file. If Anything Else, then add an input.
-        calculated_interest = ''
+        calculated_interest = 'null'
         if (row[5] == 'Anything Else'):
             calculated_interest = 7
 
@@ -48,7 +48,7 @@ def generate_test_data(sheet):
         interest_rate = float(row[7].strip('%')) / 100
 
         # Get Test Loan Interest Rate from file.
-        loan_interest_rate = ''
+        loan_interest_rate = 'null'
         if (row[8] == 'Anything Else'):
             loan_interest_rate = 107
         elif (row[8] != 'Blank' and row[8] != 'Error'):
@@ -65,7 +65,7 @@ def generate_test_data(sheet):
             remaining_loan_amount = 15000000
 
 
-        total_loan_amount = ''
+        total_loan_amount = 'null'
         if (row[11] == '$0 to $100,000'):
             total_loan_amount = random.randint(0, 100000)
         elif (row[11] == '$100,001 to $500,000'):
@@ -103,10 +103,10 @@ def generate_apex_test_cases(test_data):
                 acc.Calculated_Interest__c = {data[1][5]};
                 acc.Email__c = '{data[1][6]}';
                 acc.Loan_Interest_Rate__c = {data[1][8]};
-                acc.Loan_Type__c = {data[1][9]};
+                acc.Loan_Type__c = '{data[1][9]}';
                 //acc.Remaining_Loan_Amount__c = {data[1][10]};
                 acc.Total_Loan_Amount__c = {data[1][11]};
-                acc.Active__c = {data[1][12]};
+                acc.Active__c = '{data[1][12]}';
                 
                 Test.startTest();
                 try {{
@@ -121,7 +121,7 @@ def generate_apex_test_cases(test_data):
                     //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
                     System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
                 }} catch (Exception e) {{
-                    System.assert(e.getMessage());
+                    System.assert(false, e.getMessage());
                 }}
                 Test.stopTest();
             }}
@@ -138,7 +138,7 @@ def generate_apex_test_cases(test_data):
                 acc.Balance__c = 100;
                 acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('{data[1][4]}').getRecordTypeId();
                 acc.Email__c = 'testUpdate@pairwise.test';
-                acc.Active__c = {data[1][12]};
+                acc.Active__c = '{data[1][12]}';
                 insert acc;
                 
                 acc.Name = '{data[1][2]}';
@@ -146,7 +146,7 @@ def generate_apex_test_cases(test_data):
                 acc.Calculated_Interest__c = {data[1][5]};
                 acc.Email__c = '{data[1][6]}';
                 acc.Loan_Interest_Rate__c = {data[1][8]};
-                acc.Loan_Type__c = {data[1][9]};
+                acc.Loan_Type__c = '{data[1][9]}';
                 acc.Remaining_Loan_Amount__c = {data[1][10]};
                 acc.Total_Loan_Amount__c = {data[1][11]};
                 
@@ -163,7 +163,7 @@ def generate_apex_test_cases(test_data):
                     //System.assert(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
                     System.assert(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
                 }} catch (Exception e) {{
-                    System.assert(e.getMessage());
+                    System.assert(false, e.getMessage());
                 }}
                 Test.stopTest();
             }}
