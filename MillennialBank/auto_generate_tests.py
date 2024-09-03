@@ -17,22 +17,34 @@ def generate_test_data(sheet):
         # Get Test Type from file
         dml_type = row[1]
         
-        # Get Test Name from file. If not Blank, then add it. 
+        # Get Test Name from file. If Normal, then add a valid name. 
         name = ''
-        if (row[2] != 'Blank'):
-            name = row[2]
+        if (row[2] == 'Normal'):
+            name = 'Pairwise Test Account ' + test_number
         
+        # Get Test Balance from file. If Negative, then add a negative value. Else if add a positive number.
         balance = ''
         if (row[3] == 'Negative'):
             balance = -7
+        elif (row[3] == '>=$0'):
+            balance = random.randint(0, 99)
+        elif (row[3 == '>=$100']):
+            balance = random.randint(100, 200)
         
-        balance = row[1] if row[1] else '' # if no value, then blank
-        record_type = row[2]
-        email = row[3] if row[3] else 'FAIL'  # If Email is Blank, it should fail
+        # Get Test Record Type from file.
+        record_type = row[4]
+
+        calculated_interest = row[5]
+
+        # Get Test Email from file. If Normal, then add a valid email.
+        email = ''
+        if (row[6] == 'Normal'):
+            email = 'test' + test_number + '@pairwise.test'
+        
         loan_interest_rate = row[4] if row[4] in [5, 10, 15, 20] else 'FAIL'  # Replace with valid percentages
         total_loan_amount = row[5] if row[5] else random.randint(0, 100)  # Random value if range not specified
         active = row[6]
-        calculated_interest = None  # Should fail if it is not blank
+        
         remaining_loan_amount = None  # Should fail if it is not blank
 
         if record_type != 'Salary Account' and balance > 0:
