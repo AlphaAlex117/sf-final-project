@@ -5,15 +5,15 @@ import subprocess
 path_to_sfdx = "C:\Program Files\sf\\bin\sfdx.cmd"
 
 # Function to deploy source to Salesforce org using SFDX
-def deploy_source():
-    default_folder = os.path.join("force-app", "main", "default")
+# def deploy_source():
+#     default_folder = os.path.join("force-app", "main", "default")
 
-    try:
-        print("Deploying source to org...")
-        subprocess.run([path_to_sfdx, "force:source:deploy", "-p", default_folder], check=True)
-        print("Source deployed successfully.")
-    except subprocess.CalledProcessError as e:
-        print(f"Error deploying source: {e}")
+#     try:
+#         print("Deploying source to org...")
+#         subprocess.run([path_to_sfdx, "force:source:deploy", "-p", default_folder], check=True)
+#         print("Source deployed successfully.")
+#     except subprocess.CalledProcessError as e:
+#         print(f"Error deploying source: {e}")
 
 # Function to retrieve source from Salesforce org using SFDX
 def retrieve_source():
@@ -44,7 +44,7 @@ def commit_and_push():
 # Main loop to run every 15 minutes
 def main():
     while True:
-        deploy_source()  # Deploy the source before retrieval
+        # deploy_source()  # Deploy the source before retrieval
         retrieve_source()
         commit_and_push()
         print("\033[1;32m Waiting for 15 minutes...")

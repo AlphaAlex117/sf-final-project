@@ -9,9 +9,10 @@ public class AccountPairwiseTest {
         new List<Object>{'', 50, Schema.SObjectType.Account.getRecordTypeInfosByName().get('Salary Account').getRecordTypeId(), 'test1@example.com', 5, 100, true, null, null},
         // Test Input With Negative Balance -> Fail
         new List<Object>{'Test Account 2', -10, Schema.SObjectType.Account.getRecordTypeInfosByName().get('Salary Account').getRecordTypeId(), 'test2@example.com', 5, 100, true, null, null},
-        // Test Input With Zero Balance -> Fail if not Salary Account
-        new List<Object>{'Test Account 3', 0, Schema.SObjectType.Account.getRecordTypeInfosByName().get('Salary Account').getRecordTypeId(), 'test2@example.com', 5, 100, true, null, null},
-        new List<Object>{'Test Account 4', -10, Schema.SObjectType.Account.getRecordTypeInfosByName().get('Salary Account').getRecordTypeId(), 'test2@example.com', 5, 100, true, null, null},
+        // Test Input With 0 Balance -> Fail if not Salary Account
+        new List<Object>{'Test Account 3', 57, Schema.SObjectType.Account.getRecordTypeInfosByName().get('Salary Account').getRecordTypeId(), 'test2@example.com', 5, 100, true, null, null},
+        // Test Input With Positive but less than 100 Balance -> Fail if not Salary Account
+        new List<Object>{'Test Account 4', 57, Schema.SObjectType.Account.getRecordTypeInfosByName().get('Salary Account').getRecordTypeId(), 'test2@example.com', 5, 100, true, null, null},
         new List<Object>{'Test Account 5', -10, Schema.SObjectType.Account.getRecordTypeInfosByName().get('Salary Account').getRecordTypeId(), 'test2@example.com', 5, 100, true, null, null}
         // Add more test cases up to 173 here...
     };
