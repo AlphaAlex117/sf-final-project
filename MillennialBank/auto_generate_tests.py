@@ -45,14 +45,14 @@ def generate_test_data(sheet):
             email = 'test' + str(test_number) + '@pairwise.test'
 
         # Get Test Interest Rate from file.
-        interest_rate = row[7]
+        interest_rate = float(row[7].strip('%')) / 100
 
         # Get Test Loan Interest Rate from file.
-        loan_interest_rate = 0
+        loan_interest_rate = ''
         if (row[8] == 'Anything Else'):
             loan_interest_rate = 107
-        else:
-            loan_interest_rate = row[8]
+        elif (row[8] != 'Blank'):
+            loan_interest_rate = str(float(row[8].strip('%')) / 100)
     
 
         loan_type = ''
@@ -91,24 +91,22 @@ def generate_apex_test_cases(test_data):
     apex_tests = []
 
     for data in enumerate(test_data):
-        #print(data)
-        print(data[1][2])
         # Add a Create Test
-        if (data[1] == 'Create'):
+        if (data[1][1] == 'Create'):
             apex_test = f"""
             @isTest
-            public static void testAccount_{data[0]}() {{
+            public static void testAccount_{data[1][0]}() {{
                 Account acc = new Account();
-                acc.Name = '{data[2]}';
-                acc.Balance__c = {data[3]};
-                acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('{data[4]}').getRecordTypeId();
-                acc.Calculated_Interest__c = {data[5]};
-                acc.Email__c = '{data[6]}';
-                acc.Loan_Interest_Rate__c = {data[8]};
-                acc.Loan_Type__c = {data[9]};
-                acc.Remaining_Loan_Amount__c = {data[10]};
-                acc.Total_Loan_Amount__c = {data[11]};
-                acc.Active__c = {data[12]};
+                acc.Name = '{data[1][2]}';
+                acc.Balance__c = {data[1][3]};
+                acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('{data[1][4]}').getRecordTypeId();
+                acc.Calculated_Interest__c = {data[1][5]};
+                acc.Email__c = '{data[1][6]}';
+                acc.Loan_Interest_Rate__c = {data[1][8]};
+                acc.Loan_Type__c = {data[1][9]};
+                acc.Remaining_Loan_Amount__c = {data[1][10]};
+                acc.Total_Loan_Amount__c = {data[1][11]};
+                acc.Active__c = {data[1][12]};
                 
                 Test.startTest();
                 try {{
@@ -123,26 +121,26 @@ def generate_apex_test_cases(test_data):
             apex_tests.append(apex_test)
         
         # Add an Update Test
-        elif (data[1] == 'Update'):
+        elif (data[1][1] == 'Update'):
             apex_test = f"""
             @isTest
-            public static void testAccount_{data[0]}() {{
+            public static void testAccount_{data[1][0]}() {{
                 Account acc = new Account();
                 acc.Name = 'ToUpdate Account';
                 acc.Balance__c = 100;
-                acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('{data[4]}').getRecordTypeId();
+                acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('{data[1][4]}').getRecordTypeId();
                 acc.Email__c = 'testUpdate@pairwise.test';
-                acc.Active__c = {data[12]};
+                acc.Active__c = {data[1][12]};
                 insert acc;
                 
-                acc.Name = '{data[2]}';
-                acc.Balance__c = {data[3]};
-                acc.Calculated_Interest__c = {data[5]};
-                acc.Email__c = '{data[6]}';
-                acc.Loan_Interest_Rate__c = {data[8]};
-                acc.Loan_Type__c = {data[9]};
-                acc.Remaining_Loan_Amount__c = {data[10]};
-                acc.Total_Loan_Amount__c = {data[11]};
+                acc.Name = '{data[1][2]}';
+                acc.Balance__c = {data[1][3]};
+                acc.Calculated_Interest__c = {data[1][5]};
+                acc.Email__c = '{data[1][6]}';
+                acc.Loan_Interest_Rate__c = {data[1][8]};
+                acc.Loan_Type__c = {data[1][9]};
+                acc.Remaining_Loan_Amount__c = {data[1][10]};
+                acc.Total_Loan_Amount__c = {data[1][11]};
                 
                 Test.startTest();
                 try {{
@@ -165,7 +163,7 @@ def main():
     test_data = generate_test_data(sheet)
     #print(test_data)
     apex_test_cases = generate_apex_test_cases(test_data)
-    print(apex_test_cases)
+    #print(apex_test_cases)
     
     with open("GeneratedApexTests.cls", "w") as file:
         file.write(apex_test_cases)
