@@ -51,9 +51,9 @@ def generate_test_data(sheet):
         loan_interest_rate = ''
         if (row[8] == 'Anything Else'):
             loan_interest_rate = 107
-        elif (row[8] != 'Blank'):
+        elif (row[8] != 'Blank' and row[8] != 'Error'):
             loan_interest_rate = str(float(row[8].strip('%')) / 100)
-    
+            
 
         loan_type = ''
         if (row[9] != 'Blank'):
