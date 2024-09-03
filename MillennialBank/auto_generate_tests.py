@@ -11,7 +11,7 @@ def load_excel(file_path):
 def generate_test_data(sheet):
     test_data = []
     
-    for row in sheet.iter_rows(values_only=True):
+    for row in sheet.iter_rows(min_row=2, values_only=True):
         # Get Test Number from file
         test_number = row[0]
         # Get Test Type from file
@@ -91,6 +91,8 @@ def generate_apex_test_cases(test_data):
     apex_tests = []
 
     for data in enumerate(test_data):
+        #print(data)
+        print(data[1][2])
         # Add a Create Test
         if (data[1] == 'Create'):
             apex_test = f"""
@@ -126,19 +128,21 @@ def generate_apex_test_cases(test_data):
             @isTest
             public static void testAccount_{data[0]}() {{
                 Account acc = new Account();
-                
+                acc.Name = 'ToUpdate Account';
+                acc.Balance__c = 100;
+                acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('{data[4]}').getRecordTypeId();
+                acc.Email__c = 'testUpdate@pairwise.test';
+                acc.Active__c = {data[12]};
                 insert acc;
                 
                 acc.Name = '{data[2]}';
                 acc.Balance__c = {data[3]};
-                acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('{data[4]}').getRecordTypeId();
                 acc.Calculated_Interest__c = {data[5]};
                 acc.Email__c = '{data[6]}';
                 acc.Loan_Interest_Rate__c = {data[8]};
                 acc.Loan_Type__c = {data[9]};
                 acc.Remaining_Loan_Amount__c = {data[10]};
                 acc.Total_Loan_Amount__c = {data[11]};
-                acc.Active__c = {data[12]};
                 
                 Test.startTest();
                 try {{
@@ -161,6 +165,7 @@ def main():
     test_data = generate_test_data(sheet)
     #print(test_data)
     apex_test_cases = generate_apex_test_cases(test_data)
+    print(apex_test_cases)
     
     with open("GeneratedApexTests.cls", "w") as file:
         file.write(apex_test_cases)
