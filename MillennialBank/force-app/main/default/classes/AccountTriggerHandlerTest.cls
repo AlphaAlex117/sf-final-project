@@ -155,11 +155,15 @@
         allAccounts.addAll(transactionalAccounts);
         allAccounts.addAll(currentAccounts);
         
+        System.debug(allAccounts);
+
         Test.startTest();
         Database.SaveResult[] results = Database.insert(allAccounts, false);
-        
+        System.debug(results);
+
         List<Account> insertedAccounts = [SELECT id, name, recordtypeid, total_loan_amount__c, loan_type__c, loan_interest_rate__c FROM Account];
-        
+        System.debug(insertedAccounts);
+
         for(Account acc : insertedAccounts){
             
             if (acc.RecordTypeId == '012aj000002sfWTAAY') {
