@@ -175,6 +175,10 @@
         Database.SaveResult[] results = Database.insert(allAccounts, false);
         Test.stopTest();
         
+        for(Account acc : allAccounts){
+            
+        }
+        
         
     }
     
