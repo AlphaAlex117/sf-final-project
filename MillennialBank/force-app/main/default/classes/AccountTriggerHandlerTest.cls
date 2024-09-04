@@ -392,7 +392,10 @@
         Integer min = 1;
         for(Account acc : insertedAccounts){
             rand = min + (Integer)Math.floor(Math.random() * (max - min + 1));
+            acc.Total_Loan_Amount__c = rand;  
         }
+        update insertedAccounts;
+        
         
     }
 }
