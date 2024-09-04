@@ -384,9 +384,12 @@
         allAccounts.addAll(salaryAccounts);
         allAccounts.addAll(transactionalAccounts);
         allAccounts.addAll(currentAccounts);
-        Database.SaveResult[] results = Database.insert(allAccounts, false);
         
+        Test.startTest();
+        
+        Database.SaveResult[] results = Database.insert(allAccounts, false);
         List<Account> insertedAccounts = [SELECT id, name, recordtypeid, total_loan_amount__c, loan_type__c, loan_interest_rate__c FROM Account];
+        
         Integer rand;
         Integer max = 1000000;
         Integer min = 1;
@@ -395,6 +398,74 @@
             acc.Total_Loan_Amount__c = rand;  
         }
         update insertedAccounts;
+        
+        List<Account> insertedAccounts2 = [SELECT id, name, recordtypeid, total_loan_amount__c, loan_type__c, loan_interest_rate__c FROM Account];
+        for(Account acc : insertedAccounts2){
+            
+            if (acc.RecordTypeId == '012aj000002sfWTAAY') {
+        		// Salary Account logic
+        		if (acc.Loan_Type__c == 'Home Loan') {
+            		if (acc.Total_Loan_Amount__c <= 100000) {
+                		System.assertEquals(8.0, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Salary Account with Home Loan and amount <= 100,000');
+            		} else if (acc.Total_Loan_Amount__c <= 500000) {
+                		System.assertEquals(11.0, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Salary Account with Home Loan and amount <= 500,000');
+            		} else if (acc.Total_Loan_Amount__c <= 1000000) {
+                		System.assertEquals(14.0, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Salary Account with Home Loan and amount <= 1,000,000');
+            		}
+        		}
+                else if (acc.Loan_Type__c == 'Car Loan') {
+            		if (acc.Total_Loan_Amount__c <= 100000) {
+                		System.assertEquals(8.4, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Salary Account with Car Loan and amount <= 100,000');
+            		} else if (acc.Total_Loan_Amount__c <= 500000) {
+                		System.assertEquals(10.3, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Salary Account with Car Loan and amount <= 500,000');
+            		} else if (acc.Total_Loan_Amount__c > 500000) {
+                		System.assertEquals(null, acc.Loan_Interest_Rate__c, 'Account should not have been inserted due to exceeding loan limit for Car Loan');
+            		}
+        		}
+    		}
+            else if (acc.RecordTypeId == '012aj000002sbClAAI') {
+        		// Transactional Account logic
+        		if (acc.Loan_Type__c == 'Home Loan') {
+            		if (acc.Total_Loan_Amount__c <= 100000) {
+                		System.assertEquals(9.0, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Transactional Account with Home Loan and amount <= 100,000');
+            		} else if (acc.Total_Loan_Amount__c <= 500000) {
+                		System.assertEquals(11.8, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Transactional Account with Home Loan and amount <= 500,000');
+            		} else if (acc.Total_Loan_Amount__c <= 1000000) {
+                		System.assertEquals(15.9, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Transactional Account with Home Loan and amount <= 1,000,000');
+            		}
+        		}
+                else if (acc.Loan_Type__c == 'Car Loan') {
+            		if (acc.Total_Loan_Amount__c <= 100000) {
+                		System.assertEquals(7.0, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Transactional Account with Car Loan and amount <= 100,000');
+            		} else if (acc.Total_Loan_Amount__c <= 500000) {
+                		System.assertEquals(10.9, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Transactional Account with Car Loan and amount <= 500,000');
+            		} else if (acc.Total_Loan_Amount__c <= 1000000) {
+                		System.assertEquals(13.6, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Transactional Account with Car Loan and amount <= 1,000,000');
+            		}
+        		}
+    		}
+            else if (acc.RecordTypeId == '012aj000002sfbJAAQ') {
+        		// Current Account logic
+        		if (acc.Loan_Type__c == 'Home Loan') {
+            		if (acc.Total_Loan_Amount__c <= 1000000) {
+                		System.assertEquals(10.0, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Current Account with Home Loan and amount <= 1,000,000');
+            		} else if (acc.Total_Loan_Amount__c <= 5000000) {
+                		System.assertEquals(12.5, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Current Account with Home Loan and amount <= 5,000,000');
+            		} else if (acc.Total_Loan_Amount__c <= 10000000) {
+                		System.assertEquals(16.2, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Current Account with Home Loan and amount <= 10,000,000');
+            		}
+        		}
+                else if (acc.Loan_Type__c == 'Car Loan') {
+            		if (acc.Total_Loan_Amount__c <= 1000000) {
+                		System.assertEquals(9.0, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Current Account with Car Loan and amount <= 1,000,000');
+            		} else if (acc.Total_Loan_Amount__c <= 5000000) {
+                        System.assertEquals(11.9, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Current Account with Car Loan and amount <= 5,000,000');
+            		} else if (acc.Total_Loan_Amount__c <= 10000000) {
+                		System.assertEquals(14.6, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Current Account with Car Loan and amount <= 10,000,000');
+            		}
+        		}
+    		}
+        }
         
         
     }
