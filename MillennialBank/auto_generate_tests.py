@@ -19,25 +19,25 @@ def generate_test_data(sheet):
         
         # Get Test Name from file. If Normal, then add a valid name. 
         name = ''
-        if (str(row[2]) == 'Normal'):
-            name = 'Pairwise Test Account ' + test_number
+        if (row[3] == 'Normal'):
+            name = 'Pairwise Test Account ' + str(test_number)
         
         # Get Test Balance from file. If Negative, then add a negative value. Else if add a positive number.
         balance = 'null'
-        if (str(row[3]) == 'Negative'):
+        if (row[4] == 'Negative'):
             balance = -7
-        elif (str(row[3]) == '>=$0'):
+        elif (row[4] == '>=$0'):
             balance = random.randint(0, 99)
-        elif (str(row[3]) == '>=$100'):
+        elif (row[4] == '>=$100'):
             balance = random.randint(100, 200)
         
         # Get Test Record Type from file.
         record_type = 'Error'
-        if (row[4] == 'Salary Account'):
+        if (row[2] == 'Salary Account'):
             record_type = 'Salary_Account'
-        elif (row[4] == 'Transactional Account'):
+        elif (row[2] == 'Transactional Account'):
             record_type = 'Transactional_Account'
-        elif (row[4] == 'Current Account'):
+        elif (row[2] == 'Current Account'):
             record_type = 'Current_Account'
 
         # Get Test Calculated Interest from file. If Anything Else, then add an input.

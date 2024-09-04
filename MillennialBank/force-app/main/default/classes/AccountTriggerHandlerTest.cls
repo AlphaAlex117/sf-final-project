@@ -230,6 +230,7 @@
     }
     
     @isTest static void testBeforeUpdate(){
+        //Insert Accounts
         List<Account> salaryAccounts = new List<Account>{
             new Account(Name = 'TestAcc1', 
                         RecordTypeId = '012aj000002sfWTAAY',
@@ -385,11 +386,16 @@
         allAccounts.addAll(transactionalAccounts);
         allAccounts.addAll(currentAccounts);
         
-        Test.startTest();
+        
         
         Database.SaveResult[] results = Database.insert(allAccounts, false);
+        
+        //Get Inserted Accounts
         List<Account> insertedAccounts = [SELECT id, name, recordtypeid, total_loan_amount__c, loan_type__c, loan_interest_rate__c FROM Account];
         
+        System.debug(insertedAccounts);
+
+        //Randomize Total Loan Amount
         Integer rand;
         Integer max = 1000000;
         Integer min = 1;
@@ -397,11 +403,19 @@
             rand = min + (Integer)Math.floor(Math.random() * (max - min + 1));
             acc.Total_Loan_Amount__c = rand;  
         }
+
+        Test.startTest();
+
+        //Update Accounts
         Database.SaveResult[] results2 = Database.update(insertedAccounts, false);
+
+        //Get Updated Accounts
+        List<Account> updatedAccounts = [SELECT id, name, recordtypeid, total_loan_amount__c, loan_type__c, loan_interest_rate__c FROM Account];
         
-        List<Account> insertedAccounts2 = [SELECT id, name, recordtypeid, total_loan_amount__c, loan_type__c, loan_interest_rate__c FROM Account];
-        
-        for(Account acc : insertedAccounts2){
+        System.debug(updatedAccounts);
+
+        //Assertions
+        for(Account acc : updatedAccounts){
             
             if (acc.RecordTypeId == '012aj000002sfWTAAY') {
         		// Salary Account logic
