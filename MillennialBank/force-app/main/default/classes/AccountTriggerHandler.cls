@@ -9,13 +9,13 @@ public class AccountTriggerHandler {
             beforeUpdate(Trigger.new, Trigger.oldMap);
         } else if (operation == System.TriggerOperation.AFTER_UPDATE) {
             afterUpdate(Trigger.new, Trigger.oldMap);
-        } else if (operation == System.TriggerOperation.BEFORE_DELETE) {
+        } /*else if (operation == System.TriggerOperation.BEFORE_DELETE) {
             beforeDelete(Trigger.old);
         } else if (operation == System.TriggerOperation.AFTER_DELETE) {
             afterDelete(Trigger.old);
         } else if (operation == System.TriggerOperation.AFTER_UNDELETE) {
             afterUndelete(Trigger.new);
-        }
+        }*/
     }
 
     private static void beforeInsert(List<Account> newAccounts) {
@@ -35,7 +35,7 @@ public class AccountTriggerHandler {
 
     private static void afterUpdate(List<Account> newAccounts, Map<Id, SObject> oldAccountMap) {
     }
-
+	/*
     private static void beforeDelete(List<Account> oldAccounts) {
     }
 
@@ -44,7 +44,8 @@ public class AccountTriggerHandler {
 
     private static void afterUndelete(List<Account> newAccounts) {
     }
-
+	*/
+    
     // Method to get RecordType Names
     private static Map<Id, String> getRecordTypeNames(List<Account> accounts) {
         // Get all unique RecordTypeIds from the accounts list
