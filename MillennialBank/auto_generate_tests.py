@@ -19,16 +19,16 @@ def generate_test_data(sheet):
         
         # Get Test Name from file. If Normal, then add a valid name. 
         name = ''
-        if (row[2] == 'Normal'):
+        if (str(row[2]) == 'Normal'):
             name = 'Pairwise Test Account ' + test_number
         
         # Get Test Balance from file. If Negative, then add a negative value. Else if add a positive number.
         balance = 'null'
-        if (row[3] == 'Negative'):
+        if (str(row[3]) == 'Negative'):
             balance = -7
-        elif (row[3] == '>=$0'):
+        elif (str(row[3]) == '>=$0'):
             balance = random.randint(0, 99)
-        elif (row[3 == '>=$100']):
+        elif (str(row[3]) == '>=$100'):
             balance = random.randint(100, 200)
         
         # Get Test Record Type from file.

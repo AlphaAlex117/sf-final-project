@@ -397,9 +397,10 @@
             rand = min + (Integer)Math.floor(Math.random() * (max - min + 1));
             acc.Total_Loan_Amount__c = rand;  
         }
-        update insertedAccounts;
+        Database.SaveResult[] results2 = Database.update(insertedAccounts, false);
         
         List<Account> insertedAccounts2 = [SELECT id, name, recordtypeid, total_loan_amount__c, loan_type__c, loan_interest_rate__c FROM Account];
+        
         for(Account acc : insertedAccounts2){
             
             if (acc.RecordTypeId == '012aj000002sfWTAAY') {
@@ -466,7 +467,6 @@
         		}
     		}
         }
-        
-        
+        Test.stopTest(); 
     }
 }
