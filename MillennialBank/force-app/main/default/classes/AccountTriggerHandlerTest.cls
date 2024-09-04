@@ -152,8 +152,8 @@
             
         List<Account> allAccounts = new List<Account>();
         allAccounts.addAll(salaryAccounts);
-        allAccounts.addAll(transactionalAccounts);
-        allAccounts.addAll(currentAccounts);
+        /*allAccounts.addAll(transactionalAccounts);*/
+        /*allAccounts.addAll(currentAccounts);*/
         
         System.debug(allAccounts);
 
