@@ -229,7 +229,164 @@
         Test.stopTest();
     }
     
-    /*@isTest static void testBeforeUpdate(){
+    @isTest static void testBeforeUpdate(){
+        List<Account> salaryAccounts = new List<Account>{
+            new Account(Name = 'TestAcc1', 
+                        RecordTypeId = '012aj000002sfWTAAY',
+                        Active__c = 'Yes',
+                        Balance__c = 100000, 
+                        Email__c = 'nathan.diaz062@gmail.com',
+                        Loan_Type__c = 'Home Loan',
+                        Total_Loan_Amount__c = 100000),
+                
+            new Account(Name = 'TestAcc2', 
+                        RecordTypeId = '012aj000002sfWTAAY',
+                        Active__c = 'Yes',
+                        Balance__c = 100000, 
+                        Email__c = 'nathan.diaz062@gmail.com',
+                        Loan_Type__c = 'Home Loan',
+                        Total_Loan_Amount__c = 500000),
+                
+            new Account(Name = 'TestAcc3', 
+                        RecordTypeId = '012aj000002sfWTAAY',
+                        Active__c = 'Yes',
+                        Balance__c = 100000, 
+                        Email__c = 'nathan.diaz062@gmail.com',
+                        Loan_Type__c = 'Home Loan',
+                        Total_Loan_Amount__c = 1000000),
+                
+            new Account(Name = 'TestAcc4', 
+                        RecordTypeId = '012aj000002sfWTAAY',
+                        Active__c = 'Yes',
+                        Balance__c = 100000, 
+                        Email__c = 'nathan.diaz062@gmail.com',
+                        Loan_Type__c = 'Car Loan',
+                        Total_Loan_Amount__c = 100000),
+                
+            new Account(Name = 'TestAcc5', 
+                        RecordTypeId = '012aj000002sfWTAAY',
+                        Active__c = 'Yes',
+                        Balance__c = 100000, 
+                        Email__c = 'nathan.diaz062@gmail.com',
+                        Loan_Type__c = 'Car Loan',
+                        Total_Loan_Amount__c = 500000),
+                
+            new Account(Name = 'TestAcc6', 
+                        RecordTypeId = '012aj000002sfWTAAY',
+                        Active__c = 'Yes',
+                        Balance__c = 100000, 
+                        Email__c = 'nathan.diaz062@gmail.com',
+                        Loan_Type__c = 'Car Loan',
+                        Total_Loan_Amount__c = 600000)
+        };
         
-    }*/
+        List<Account> transactionalAccounts = new List<Account>{
+            new Account(Name = 'TestAcc1', 
+                        RecordTypeId = '012aj000002sbClAAI',
+                        Active__c = 'Yes',
+                        Balance__c = 100000, 
+                        Email__c = 'nathan.diaz062@gmail.com',
+                        Loan_Type__c = 'Home Loan',
+                        Total_Loan_Amount__c = 100000),
+                
+            new Account(Name = 'TestAcc2', 
+                        RecordTypeId = '012aj000002sbClAAI',
+                        Active__c = 'Yes',
+                        Balance__c = 100000, 
+                        Email__c = 'nathan.diaz062@gmail.com',
+                        Loan_Type__c = 'Home Loan',
+                        Total_Loan_Amount__c = 500000),
+                
+             new Account(Name = 'TestAcc3', 
+                        RecordTypeId = '012aj000002sbClAAI',
+                        Active__c = 'Yes',
+                        Balance__c = 100000, 
+                        Email__c = 'nathan.diaz062@gmail.com',
+                        Loan_Type__c = 'Home Loan',
+                        Total_Loan_Amount__c = 1000000),
+                
+             new Account(Name = 'TestAcc4', 
+                        RecordTypeId = '012aj000002sbClAAI',
+                        Active__c = 'Yes',
+                        Balance__c = 100000, 
+                        Email__c = 'nathan.diaz062@gmail.com',
+                        Loan_Type__c = 'Car Loan',
+                        Total_Loan_Amount__c = 100000),
+                
+             new Account(Name = 'TestAcc5', 
+                        RecordTypeId = '012aj000002sbClAAI',
+                        Active__c = 'Yes',
+                        Balance__c = 100000, 
+                        Email__c = 'nathan.diaz062@gmail.com',
+                        Loan_Type__c = 'Car Loan',
+                        Total_Loan_Amount__c = 500000),
+                
+             new Account(Name = 'TestAcc6', 
+                        RecordTypeId = '012aj000002sbClAAI',
+                        Active__c = 'Yes',
+                        Balance__c = 100000, 
+                        Email__c = 'nathan.diaz062@gmail.com',
+                        Loan_Type__c = 'Car Loan',
+                        Total_Loan_Amount__c = 1000000)
+        };
+            
+        List<Account> currentAccounts = new List<Account>{
+            new Account(Name = 'TestAcc1', 
+                        RecordTypeId = '012aj000002sfbJAAQ',
+                        Active__c = 'Yes',
+                        Balance__c = 100000, 
+                        Email__c = 'nathan.diaz062@gmail.com',
+                        Loan_Type__c = 'Home Loan',
+                        Total_Loan_Amount__c = 1000000),
+                
+            new Account(Name = 'TestAcc2', 
+                        RecordTypeId = '012aj000002sfbJAAQ',
+                        Active__c = 'Yes',
+                        Balance__c = 100000, 
+                        Email__c = 'nathan.diaz062@gmail.com',
+                        Loan_Type__c = 'Home Loan',
+                        Total_Loan_Amount__c = 5000000),
+                
+            new Account(Name = 'TestAcc3', 
+                        RecordTypeId = '012aj000002sfbJAAQ',
+                        Active__c = 'Yes',
+                        Balance__c = 100000, 
+                        Email__c = 'nathan.diaz062@gmail.com',
+                        Loan_Type__c = 'Home Loan',
+                        Total_Loan_Amount__c = 10000000),
+                
+            new Account(Name = 'TestAcc4', 
+                        RecordTypeId = '012aj000002sfbJAAQ',
+                        Active__c = 'Yes',
+                        Balance__c = 100000, 
+                        Email__c = 'nathan.diaz062@gmail.com',
+                        Loan_Type__c = 'Car Loan',
+                        Total_Loan_Amount__c = 1000000),
+                
+            new Account(Name = 'TestAcc5', 
+                        RecordTypeId = '012aj000002sfbJAAQ',
+                        Active__c = 'Yes',
+                        Balance__c = 100000, 
+                        Email__c = 'nathan.diaz062@gmail.com',
+                        Loan_Type__c = 'Car Loan',
+                        Total_Loan_Amount__c = 5000000),
+                
+            new Account(Name = 'TestAcc6', 
+                        RecordTypeId = '012aj000002sfbJAAQ',
+                        Active__c = 'Yes',
+                        Balance__c = 100000, 
+                        Email__c = 'nathan.diaz062@gmail.com',
+                        Loan_Type__c = 'Car Loan',
+                        Total_Loan_Amount__c = 10000000)
+        };
+            
+        List<Account> allAccounts = new List<Account>();
+        allAccounts.addAll(salaryAccounts);
+        allAccounts.addAll(transactionalAccounts);
+        allAccounts.addAll(currentAccounts);
+        Database.SaveResult[] results = Database.insert(allAccounts, false);
+        
+        List<Account> insertedAccounts = [SELECT id, name, recordtypeid, total_loan_amount__c, loan_type__c, loan_interest_rate__c FROM Account];
+        
+    }
 }
