@@ -1,20 +1,4 @@
-@isTest public class AccountTriggerHandlerTest {
-    static RecordType salaryRecordType;
-    static RecordType transactionalRecordType;
-    static RecordType currentRecordType;
-    
-    @TestSetup static void setTestData(){
-        RecordType salaryRecordType = [SELECT Id FROM RecordType 
-                            WHERE SObjectType = 'Account' AND DeveloperName = 'Salary_Account' 
-                            LIMIT 1];
-        RecordType transactionalRecordType = [SELECT Id FROM RecordType 
-                                   WHERE SObjectType = 'Account' AND DeveloperName = 'Transactional_Account' 
-                                   LIMIT 1];
-        RecordType currentRecordType = [SELECT Id FROM RecordType 
-                             WHERE SObjectType = 'Account' AND DeveloperName = 'Current_Account' 
-                             LIMIT 1];
-    }
-    
+@isTest public class AccountTriggerHandlerTest {    
     @isTest static void testBeforeInsert(){
         List<Account> salaryAccounts = new List<Account>{
             new Account(Name = 'TestAcc1', 
@@ -173,10 +157,11 @@
         
         Test.startTest();
         Database.SaveResult[] results = Database.insert(allAccounts, false);
-        Test.stopTest();
         
-        for(Account acc : allAccounts){
-            System.debug(results);
+        List<Account> insertedAccounts = [SELECT id, name, recordtypeid, total_loan_amount__c, loan_type__c, loan_interest_rate__c FROM Account];
+        
+        for(Account acc : insertedAccounts){
+            
             if (acc.RecordTypeId == '012aj000002sfWTAAY') {
         		// Salary Account logic
         		if (acc.Loan_Type__c == 'Home Loan') {
@@ -241,6 +226,7 @@
         		}
     		}
         }
+        Test.stopTest();
     }
     
     /*@isTest static void testBeforeUpdate(){
