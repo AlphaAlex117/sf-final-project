@@ -170,6 +170,10 @@ def generate_apex_test_input(test_data):
 
     return "".join(apex_test_inputs)
 
+def generate_apex_file(apex_test_input, apex_test_cases):
+    apex_test_file = f"""
+    """
+
 # Main function to run the script
 def main():
     excel_path = "C:/Users/alexa/Downloads/Ironhack Project 3 Account(2).xlsx"
@@ -177,9 +181,6 @@ def main():
     test_data = generate_test_data(sheet)
     #print(test_data)
     apex_test_input = generate_apex_test_input(test_data)
-
-    with open("GeneratedApexTestInputs.cls", "w") as file:
-        file.write(apex_test_input)
 
     apex_test_cases = generate_apex_test_cases(test_data)
     #print(apex_test_cases)
