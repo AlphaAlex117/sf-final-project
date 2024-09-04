@@ -1,6 +1,13 @@
-const { jestConfig } = require('@salesforce/sfdx-lwc-jest/config');
+// const { jestConfig } = require('@salesforce/sfdx-lwc-jest/config');
 
+// module.exports = {
+//     ...jestConfig,
+//     modulePathIgnorePatterns: ['<rootDir>/.localdevserver']
+// };
+
+const { jestConfig } = require('@salesforce/sfdx-lwc-jest/config');
 module.exports = {
     ...jestConfig,
-    modulePathIgnorePatterns: ['<rootDir>/.localdevserver']
+    modulePathIgnorePatterns: ['<rootDir>/.localdevserver'],
+    testPathIgnorePatterns: ['<rootDir>/node_modules/'],
 };

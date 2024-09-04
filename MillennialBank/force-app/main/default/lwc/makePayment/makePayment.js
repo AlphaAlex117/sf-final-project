@@ -26,7 +26,9 @@ export default class MakePayment extends LightningElement {
         makePayment({ accountId: this.recordId })
             .then(() => {
                 this.showSuccessToast('Payment made successfully');
-                this.showPaymentForm = false; // Hides the payment form and shows the "Make a Payment" button
+                console.log('handlePaymentSubmit called, toggling form visibility');
+                this.showPaymentForm = false; // Ensure this line is actually being hit
+                console.log('showPaymentForm after toggle:', this.showPaymentForm);
             })
             .catch(error => {
                 this.showErrorToast('Error making payment', error);
