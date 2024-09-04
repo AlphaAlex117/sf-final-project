@@ -3,11 +3,6 @@
  */
 @isTest
 public class AccountPairwiseTest {
-	// 2D array where each sub-array contains the input for one test case
-    List<List<Object>> testCaseData = new List<List<Object>> {
-        new List<Object>{'', 50, Schema.SObjectType.Account.getRecordTypeInfosByName().get('Salary Account').getRecordTypeId(), 'test@example.com', 5, 100, true, null, null}
-    };
-
     private static Account createAccountFromIndex(List<List<Object>> inputData, Integer index) {
         List<Object> data = inputData[index];
         
@@ -32,8 +27,11 @@ public class AccountPairwiseTest {
         acc.Active__c = (String)data[12];
             
         return acc;
-   }
+    }
 
-    
-    
+    // 2D array where each sub-array contains the input for one test case
+    List<List<Object>> testCaseData = new List<List<Object>> {
+        new List<Object>{'', 50, Schema.SObjectType.Account.getRecordTypeInfosByName().get('Salary Account').getRecordTypeId(), 'test@example.com', 5, 100, true, null, null}
+    };
+        
 }
