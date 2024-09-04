@@ -174,6 +174,8 @@
         Test.startTest();
         Database.SaveResult[] results = Database.insert(allAccounts, false);
         Test.stopTest();
+        
+        
     }
     
     @isTest static void testBeforeUpdate(){
