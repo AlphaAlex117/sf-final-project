@@ -7,24 +7,24 @@ public class AccountPairwiseTest {
         List<Object> data = inputData[index];
         
         Account acc = new Account();
-        acc.Name = (String)data[2];
+        acc.Name = (String)data[0];
+        if (data[1] != null) {
+            acc.Balance__c = (Decimal)data[1];
+        }
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get((String)data[2]).getRecordTypeId();
         if (data[3] != null) {
-            acc.Balance__c = (Decimal)data[3];
+            acc.Calculated_Interest__c = (Decimal)data[3];
         }
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get((String)data[4]).getRecordTypeId();
+        acc.Email__c = (String)data[4];
         if (data[5] != null) {
-            acc.Calculated_Interest__c = (Decimal)data[5];
+            acc.Loan_Interest_Rate__c = (Decimal)data[5];
         }
-        acc.Email__c = (String)data[6];
-        if (data[8] != null) {
-            acc.Loan_Interest_Rate__c = (Decimal)data[8];
-        }
-        acc.Loan_Type__c = (String)data[9];
+        acc.Loan_Type__c = (String)data[6];
         //acc.Remaining_Loan_Amount__c = {data[10]};
-        if (data[11] != null) {
-            acc.Total_Loan_Amount__c = (Decimal)data[11];
+        if (data[7] != null) {
+            acc.Total_Loan_Amount__c = (Decimal)data[7];
         }
-        acc.Active__c = (String)data[12];
+        acc.Active__c = (String)data[8];
             
         return acc;
     }
@@ -32,22 +32,22 @@ public class AccountPairwiseTest {
     private static Account updateAccountFromIndex(List<List<Object>> inputData, Integer index, Account acc) {
         List<Object> data = inputData[index];
 
-        acc.Name = (String)data[2];
+        acc.Name = (String)data[0];
+        if (data[1] != null) {
+            acc.Balance__c = (Decimal)data[1];
+        }
+        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get((String)data[2]).getRecordTypeId();
         if (data[3] != null) {
-            acc.Balance__c = (Decimal)data[3];
+            acc.Calculated_Interest__c = (Decimal)data[3];
         }
-        acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get((String)data[4]).getRecordTypeId();
+        acc.Email__c = (String)data[4];
         if (data[5] != null) {
-            acc.Calculated_Interest__c = (Decimal)data[5];
+            acc.Loan_Interest_Rate__c = (Decimal)data[5];
         }
-        acc.Email__c = (String)data[6];
-        if (data[8] != null) {
-            acc.Loan_Interest_Rate__c = (Decimal)data[8];
-        }
-        acc.Loan_Type__c = (String)data[9];
+        acc.Loan_Type__c = (String)data[6];
         //acc.Remaining_Loan_Amount__c = {data[10]};
-        if (data[11] != null) {
-            acc.Total_Loan_Amount__c = (Decimal)data[11];
+        if (data[7] != null) {
+            acc.Total_Loan_Amount__c = (Decimal)data[7];
         }
 
         return acc;
@@ -56,179 +56,179 @@ public class AccountPairwiseTest {
     // 2D array where each sub-array contains the input for one test case
     static List<List<Object>> testCaseData = new List<List<Object>> {
         new List<Object>{'ToUpdate Account', 100, 'Salary Account', null, 'testUpdate@pairwise.test', null, null, null, 'Yes'},
-        new List<Object>{'', 174, 'Negative', null, '', 107, 'Car Loan', 820023, 'Yes'},
-        new List<Object>{'', 129, 'Negative', 7, '', 0.11, 'Home Loan', 906486, 'Yes'},
-        new List<Object>{'', 119, 'Negative', null, '', 0.07, 'Car Loan', 295146, 'Yes'},
-        new List<Object>{'', 128, 'Negative', 7, '', null, 'Home Loan', 8964, 'Yes'},
-        new List<Object>{'', 188, '>=$100', 7, 'test5@pairwise.test', 0.11, '', null, 'Yes'},
-        new List<Object>{'', 161, 'Negative', 7, 'test6@pairwise.test', 0.08, 'Car Loan', 667184, 'Yes'},
-        new List<Object>{'', 123, 'Negative', null, 'test7@pairwise.test', 0.125, 'Car Loan', 4238554, 'Yes'},
-        new List<Object>{'', 144, 'Negative', 7, 'test8@pairwise.test', 0.14, 'Car Loan', null, 'Yes'},
-        new List<Object>{'', 198, '>=$0', null, 'test9@pairwise.test', 0.11, 'Car Loan', 55705, 'Yes'},
-        new List<Object>{'', 118, '>=$100', 7, '', 0.125, 'Car Loan', null, 'Yes'},
-        new List<Object>{'', 191, 'Negative', 7, 'test11@pairwise.test', 0.125, 'Car Loan', null, 'Yes'},
-        new List<Object>{'', 125, 'Negative', null, 'test12@pairwise.test', 0.10300000000000001, 'Car Loan', 907814, 'Yes'},
-        new List<Object>{'', 115, 'Negative', null, 'test13@pairwise.test', null, 'Car Loan', 874562, 'Yes'},
-        new List<Object>{'', 161, 'Negative', null, '', 0.08, '', null, 'Yes'},
-        new List<Object>{'', 137, 'Negative', 7, '', 0.162, 'Home Loan', 6652530, 'Yes'},
-        new List<Object>{'', 185, 'Negative', 7, '', 0.07, 'Car Loan', 446090, 'Yes'},
-        new List<Object>{'', 106, '>=$0', null, 'test17@pairwise.test', 0.136, 'Car Loan', 590664, 'Yes'},
-        new List<Object>{'', 114, 'Negative', null, '', 0.1, 'Home Loan', 714285, 'Yes'},
-        new List<Object>{'', 118, '>=$0', 7, 'test19@pairwise.test', 0.10300000000000001, 'Car Loan', 7988672, 'Yes'},
-        new List<Object>{'', 176, '>=$0', null, '', 0.07, 'Home Loan', 695698, 'Yes'},
-        new List<Object>{'', 190, '>=$100', 7, '', 107, 'Home Loan', 3973787, 'Yes'},
-        new List<Object>{'', 131, 'Negative', 7, 'test22@pairwise.test', 107, 'Car Loan', null, 'Yes'},
-        new List<Object>{'', 172, '>=$0', 7, '', 0.159, 'Car Loan', 9202485, 'Yes'},
-        new List<Object>{'', 125, '>=$100', 7, 'test24@pairwise.test', 0.11900000000000001, 'Car Loan', 2995283, 'Yes'},
-        new List<Object>{'', 153, 'Negative', 7, '', 0.125, '', null, 'Yes'},
-        new List<Object>{'', 158, 'Blank', 7, 'test26@pairwise.test', 0.146, 'Home Loan', 2430179, 'Yes'},
-        new List<Object>{'', 194, '>=$100', null, 'test27@pairwise.test', 0.162, 'Car Loan', 958418, 'Yes'},
-        new List<Object>{'', 167, '>=$100', 7, '', 0.08, 'Home Loan', null, 'Yes'},
-        new List<Object>{'', 140, 'Negative', 7, '', 0.084, 'Home Loan', 107488, 'Yes'},
-        new List<Object>{'', 189, 'Blank', 7, '', 107, 'Home Loan', 993266, 'Yes'},
-        new List<Object>{'', 170, 'Negative', null, '', 0.08, 'Home Loan', 29193, 'Yes'},
-        new List<Object>{'', 110, 'Negative', null, 'test32@pairwise.test', 0.109, '', null, 'Yes'},
-        new List<Object>{'', 121, '>=$100', null, 'test33@pairwise.test', 0.11900000000000001, 'Home Loan', 6013298, 'Yes'},
-        new List<Object>{'', 194, '>=$0', 7, '', null, '', null, 'Yes'},
-        new List<Object>{'', 184, 'Negative', null, 'test35@pairwise.test', null, 'Home Loan', 9830072, 'Yes'},
-        new List<Object>{'', 139, '>=$100', 7, 'test36@pairwise.test', 0.162, 'Car Loan', 3450391, 'Yes'},
-        new List<Object>{'', 192, 'Blank', 7, '', 0.11800000000000001, 'Home Loan', 696956, 'Yes'},
-        new List<Object>{'', 165, '>=$0', null, '', 0.146, 'Car Loan', null, 'Yes'},
-        new List<Object>{'', 199, '>=$100', 7, 'test39@pairwise.test', 0.146, 'Home Loan', 715008, 'Yes'},
-        new List<Object>{'', 138, 'Negative', 7, 'test40@pairwise.test', 0.146, 'Home Loan', 174861, 'Yes'},
-        new List<Object>{'', 200, 'Blank', null, 'test41@pairwise.test', 0.08, 'Home Loan', 7188216, 'Yes'},
-        new List<Object>{'', 159, '>=$100', null, 'test42@pairwise.test', null, 'Car Loan', 160334, 'Yes'},
-        new List<Object>{'', 146, '>=$0', 7, 'test43@pairwise.test', 0.11, 'Car Loan', 661056, 'Yes'},
-        new List<Object>{'', 192, '>=$0', null, 'test44@pairwise.test', 0.14, '', null, 'Yes'},
-        new List<Object>{'', 138, 'Negative', null, 'test45@pairwise.test', 0.136, 'Home Loan', null, 'Yes'},
-        new List<Object>{'', 146, 'Negative', 7, 'test46@pairwise.test', 0.14, 'Home Loan', 150757, 'Yes'},
-        new List<Object>{'', 150, 'Negative', 7, 'test47@pairwise.test', 107, '', null, 'Yes'},
-        new List<Object>{'', 172, 'Blank', null, 'test48@pairwise.test', 0.09, 'Car Loan', null, 'Yes'},
-        new List<Object>{'', 191, 'Blank', 7, 'test49@pairwise.test', 0.136, '', null, 'Yes'},
-        new List<Object>{'', 169, 'Negative', 7, 'test50@pairwise.test', 107, 'Home Loan', 133683, 'Yes'},
-        new List<Object>{'', 106, '>=$100', null, 'test51@pairwise.test', 0.11800000000000001, 'Home Loan', 79281, 'Yes'},
-        new List<Object>{'', 106, '>=$100', null, 'test52@pairwise.test', 0.1, 'Home Loan', 975947, 'Yes'},
-        new List<Object>{'', 102, 'Negative', null, 'test53@pairwise.test', 0.159, '', null, 'Yes'},
-        new List<Object>{'', 139, '>=$0', 7, 'test54@pairwise.test', 0.136, 'Home Loan', 89938, 'Yes'},
-        new List<Object>{'', 151, 'Blank', 7, '', 0.11, 'Home Loan', 399783, 'Yes'},
-        new List<Object>{'', 168, '>=$100', null, '', null, 'Home Loan', null, 'Yes'},
-        new List<Object>{'', 106, '>=$100', 7, '', 0.14, 'Home Loan', 9827202, 'Yes'},
-        new List<Object>{'', 195, '>=$0', 7, '', 0.14, 'Car Loan', 99966, 'Yes'},
-        new List<Object>{'', 189, 'Blank', 7, '', 0.09, 'Home Loan', 94892, 'Yes'},
-        new List<Object>{'', 183, '>=$0', null, 'test60@pairwise.test', 0.07, '', null, 'Yes'},
-        new List<Object>{'', 127, 'Blank', 7, '', 0.109, 'Car Loan', 601282, 'Yes'},
-        new List<Object>{'', 117, '>=$100', null, '', 0.10300000000000001, 'Home Loan', 685458, 'Yes'},
-        new List<Object>{'', 114, 'Blank', 7, '', 107, 'Home Loan', 52413, 'Yes'},
-        new List<Object>{'', 180, '>=$100', null, 'test64@pairwise.test', 0.125, 'Home Loan', 244613, 'Yes'},
-        new List<Object>{'', 167, 'Blank', null, '', 0.162, '', null, 'Yes'},
-        new List<Object>{'', 136, '>=$0', null, 'test66@pairwise.test', 0.1, 'Car Loan', 3041551, 'Yes'},
-        new List<Object>{'', 142, '>=$100', 7, 'test67@pairwise.test', 0.09, 'Home Loan', 310877, 'Yes'},
-        new List<Object>{'', 193, 'Blank', null, 'test68@pairwise.test', 0.159, 'Home Loan', null, 'Yes'},
-        new List<Object>{'', 125, '>=$0', 7, '', 0.162, 'Car Loan', 59375, 'Yes'},
-        new List<Object>{'', 114, 'Blank', 7, '', 0.146, 'Car Loan', 13426, 'Yes'},
-        new List<Object>{'', 157, '>=$0', null, '', 0.11800000000000001, '', null, 'Yes'},
-        new List<Object>{'', 155, '>=$100', null, '', 0.07, 'Home Loan', 8242143, 'Yes'},
-        new List<Object>{'', 106, 'Blank', null, '', 0.07, 'Car Loan', 892595, 'Yes'},
-        new List<Object>{'', 112, 'Blank', null, '', 0.07, 'Car Loan', 8177, 'Yes'},
-        new List<Object>{'', 138, '>=$100', null, '', 0.162, 'Home Loan', 528336, 'Yes'},
-        new List<Object>{'', 125, '>=$100', null, 'test76@pairwise.test', 0.11800000000000001, 'Car Loan', null, 'Yes'},
-        new List<Object>{'', 118, '>=$100', null, '', 0.10300000000000001, 'Car Loan', 454419, 'Yes'},
-        new List<Object>{'', 151, '>=$100', null, '', 0.159, 'Home Loan', 16583, 'Yes'},
-        new List<Object>{'', 108, 'Blank', 7, 'test79@pairwise.test', 0.1, 'Home Loan', 33403, 'Yes'},
-        new List<Object>{'', 115, '>=$0', null, '', 0.084, 'Car Loan', 3912, 'Yes'},
-        new List<Object>{'', 145, '>=$100', 7, 'test81@pairwise.test', 0.14, 'Car Loan', 454962, 'Yes'},
-        new List<Object>{'', 124, '>=$0', 7, '', 0.109, 'Car Loan', 196017, 'Yes'},
-        new List<Object>{'', 128, 'Blank', null, '', 0.146, 'Home Loan', 9845894, 'Yes'},
-        new List<Object>{'', 167, 'Blank', 7, 'test84@pairwise.test', null, 'Car Loan', 441065, 'Yes'},
-        new List<Object>{'', 158, '>=$100', null, 'test85@pairwise.test', null, 'Home Loan', 3347112, 'Yes'},
-        new List<Object>{'', 120, 'Negative', 7, 'test86@pairwise.test', 0.1, 'Home Loan', 27579, 'Yes'},
-        new List<Object>{'', 144, '>=$0', 7, '', 0.11900000000000001, 'Car Loan', 786076, 'Yes'},
-        new List<Object>{'', 103, '>=$0', 7, 'test88@pairwise.test', 0.10300000000000001, 'Car Loan', 951854, 'Yes'},
-        new List<Object>{'', 148, 'Blank', null, 'test89@pairwise.test', 0.10300000000000001, 'Home Loan', 26155, 'Yes'},
-        new List<Object>{'', 110, 'Blank', 7, '', 0.11800000000000001, 'Home Loan', 8354294, 'Yes'},
-        new List<Object>{'', 150, '>=$0', null, '', 107, 'Home Loan', 37365, 'Yes'},
-        new List<Object>{'', 131, 'Blank', 7, '', 0.136, 'Home Loan', 96596, 'Yes'},
-        new List<Object>{'', 116, 'Blank', 7, '', 0.125, 'Car Loan', 873522, 'Yes'},
-        new List<Object>{'', 113, 'Blank', null, 'test94@pairwise.test', 0.084, '', null, 'Yes'},
-        new List<Object>{'', 159, 'Negative', null, 'test95@pairwise.test', null, 'Home Loan', 2907257, 'Yes'},
-        new List<Object>{'', 173, 'Blank', null, '', 0.09, 'Home Loan', 269097, 'Yes'},
-        new List<Object>{'', 146, 'Negative', 7, '', 0.146, 'Home Loan', 103678, 'Yes'},
-        new List<Object>{'', 114, 'Negative', 7, 'test98@pairwise.test', 0.159, 'Home Loan', 1109870, 'Yes'},
-        new List<Object>{'', 177, '>=$100', null, '', 0.1, 'Home Loan', null, 'Yes'},
-        new List<Object>{'', 123, '>=$0', null, 'test100@pairwise.test', 0.125, 'Home Loan', 5543704, 'Yes'},
-        new List<Object>{'', 142, 'Blank', 7, '', 0.10300000000000001, '', null, 'Yes'},
-        new List<Object>{'', 170, '>=$100', 7, '', 0.084, 'Car Loan', 716383, 'Yes'},
-        new List<Object>{'', 117, 'Negative', 7, 'test103@pairwise.test', 0.1, 'Home Loan', 222420, 'Yes'},
-        new List<Object>{'', 124, 'Blank', null, 'test104@pairwise.test', 0.14, 'Home Loan', 614674, 'Yes'},
-        new List<Object>{'', 196, 'Blank', 7, 'test105@pairwise.test', null, '', null, 'Yes'},
-        new List<Object>{'', 175, '>=$100', 7, '', 0.084, 'Home Loan', 424954, 'Yes'},
-        new List<Object>{'', 142, 'Blank', 7, '', 0.11900000000000001, '', null, 'Yes'},
-        new List<Object>{'', 149, 'Negative', 7, 'test108@pairwise.test', null, 'Car Loan', 184671, 'Yes'},
-        new List<Object>{'', 126, 'Negative', 7, 'test109@pairwise.test', 0.11900000000000001, 'Home Loan', 68542, 'Yes'},
-        new List<Object>{'', 113, '>=$0', null, 'test110@pairwise.test', 0.146, '', null, 'Yes'},
-        new List<Object>{'', 148, '>=$100', 7, '', 0.109, 'Home Loan', null, 'Yes'},
-        new List<Object>{'', 170, '>=$100', 7, 'test112@pairwise.test', 0.109, 'Home Loan', 11185, 'Yes'},
-        new List<Object>{'', 105, 'Negative', null, 'test113@pairwise.test', 0.11, 'Home Loan', 3578131, 'Yes'},
-        new List<Object>{'', 192, 'Negative', 7, '', 0.084, 'Car Loan', 964432, 'Yes'},
-        new List<Object>{'', 174, '>=$0', 7, '', null, 'Car Loan', 493906, 'Yes'},
-        new List<Object>{'', 196, 'Negative', null, '', 0.09, 'Car Loan', 4470665, 'Yes'},
-        new List<Object>{'', 186, '>=$100', null, 'test117@pairwise.test', null, 'Home Loan', null, 'Yes'},
-        new List<Object>{'', 199, '>=$0', 7, '', 0.09, 'Car Loan', 669978, 'Yes'},
-        new List<Object>{'', 178, 'Negative', null, 'test119@pairwise.test', 0.136, 'Home Loan', 449483, 'Yes'},
-        new List<Object>{'', 131, 'Negative', 7, '', 0.146, 'Home Loan', 530970, 'Yes'},
-        new List<Object>{'', 148, '>=$100', 7, '', 0.11900000000000001, 'Car Loan', 805213, 'Yes'},
-        new List<Object>{'', 159, '>=$100', 7, '', 0.08, 'Home Loan', 672058, 'Yes'},
-        new List<Object>{'', 106, '>=$100', null, '', 0.084, 'Home Loan', 8012544, 'Yes'},
-        new List<Object>{'', 180, 'Negative', 7, '', 0.14, 'Car Loan', 2428457, 'Yes'},
-        new List<Object>{'', 151, '>=$100', null, 'test125@pairwise.test', 107, 'Car Loan', 7336358, 'Yes'},
-        new List<Object>{'', 168, '>=$0', 7, 'test126@pairwise.test', 0.08, 'Home Loan', 3750836, 'Yes'},
-        new List<Object>{'', 138, '>=$100', null, '', 0.136, 'Car Loan', 6698078, 'Yes'},
-        new List<Object>{'', 153, '>=$0', null, 'test128@pairwise.test', 0.09, 'Home Loan', 912878, 'Yes'},
-        new List<Object>{'', 167, '>=$100', 7, 'test129@pairwise.test', 0.11, 'Home Loan', 119699, 'Yes'},
-        new List<Object>{'', 190, '>=$0', null, '', 0.09, '', null, 'Yes'},
-        new List<Object>{'', 110, '>=$100', null, '', null, 'Car Loan', 5569979, 'Yes'},
-        new List<Object>{'', 193, 'Negative', null, 'test132@pairwise.test', 0.11800000000000001, 'Car Loan', 491135, 'Yes'},
-        new List<Object>{'', 174, '>=$100', 7, 'test133@pairwise.test', 0.11900000000000001, 'Home Loan', null, 'Yes'},
-        new List<Object>{'', 125, '>=$100', null, '', null, 'Car Loan', 947657, 'Yes'},
-        new List<Object>{'', 160, '>=$0', 7, '', 0.1, '', null, 'Yes'},
-        new List<Object>{'', 174, '>=$0', null, '', 0.125, 'Car Loan', 700509, 'Yes'},
-        new List<Object>{'', 136, 'Blank', null, 'test137@pairwise.test', 0.159, 'Home Loan', 536330, 'Yes'},
-        new List<Object>{'', 190, 'Blank', null, '', 0.08, 'Home Loan', 595651, 'Yes'},
-        new List<Object>{'', 161, '>=$100', 7, 'test139@pairwise.test', 0.162, 'Car Loan', 621103, 'Yes'},
-        new List<Object>{'', 165, '>=$100', null, 'test140@pairwise.test', 0.162, 'Home Loan', 306599, 'Yes'},
-        new List<Object>{'', 133, '>=$100', null, '', 0.159, 'Home Loan', 862711, 'Yes'},
-        new List<Object>{'', 200, '>=$0', 7, 'test142@pairwise.test', 0.159, 'Home Loan', 207251, 'Yes'},
-        new List<Object>{'', 191, '>=$100', 7, '', null, 'Home Loan', 899068, 'Yes'},
-        new List<Object>{'', 105, 'Blank', 7, '', 0.10300000000000001, 'Home Loan', null, 'Yes'},
-        new List<Object>{'', 130, '>=$0', null, 'test145@pairwise.test', 0.09, 'Car Loan', 6313387, 'Yes'},
-        new List<Object>{'', 151, '>=$100', null, 'test146@pairwise.test', 0.084, 'Home Loan', null, 'Yes'},
-        new List<Object>{'', 200, '>=$100', null, '', 0.136, 'Home Loan', 1233132, 'Yes'},
-        new List<Object>{'', 135, '>=$100', 7, 'test148@pairwise.test', 0.159, 'Home Loan', 685692, 'Yes'},
-        new List<Object>{'', 120, '>=$100', null, 'test149@pairwise.test', 0.11800000000000001, 'Home Loan', 355743, 'Yes'},
-        new List<Object>{'', 114, 'Blank', null, 'test150@pairwise.test', 0.11, 'Car Loan', 6961993, 'Yes'},
-        new List<Object>{'', 133, '>=$0', 7, '', 0.11900000000000001, 'Car Loan', 468774, 'Yes'},
-        new List<Object>{'', 136, 'Blank', null, '', 0.136, 'Car Loan', 903851, 'Yes'},
-        new List<Object>{'', 178, '>=$100', 7, 'test153@pairwise.test', 0.109, 'Car Loan', 971125, 'Yes'},
-        new List<Object>{'', 178, '>=$0', 7, '', 0.11900000000000001, 'Home Loan', 168060, 'Yes'},
-        new List<Object>{'', 124, '>=$100', null, '', 0.109, 'Car Loan', 7037479, 'Yes'},
-        new List<Object>{'', 152, 'Blank', null, 'test156@pairwise.test', 0.07, 'Car Loan', 2504772, 'Yes'},
-        new List<Object>{'', 163, '>=$100', null, 'test157@pairwise.test', 0.11800000000000001, 'Home Loan', 1118453, 'Yes'},
-        new List<Object>{'', 176, '>=$100', null, '', 0.162, 'Home Loan', null, 'Yes'},
-        new List<Object>{'', 162, '>=$0', 7, 'test159@pairwise.test', 0.08, 'Car Loan', 132255, 'Yes'},
-        new List<Object>{'', 195, '>=$0', 7, '', 0.125, 'Car Loan', 876469, 'Yes'},
-        new List<Object>{'', 183, '>=$100', 7, 'test161@pairwise.test', 0.14, 'Home Loan', 949311, 'Yes'},
-        new List<Object>{'', 113, '>=$0', null, '', 0.09, 'Car Loan', 650137, 'Yes'},
-        new List<Object>{'', 102, '>=$0', null, 'test163@pairwise.test', 0.07, 'Car Loan', null, 'Yes'},
-        new List<Object>{'', 195, '>=$100', null, '', 0.125, 'Home Loan', 54591, 'Yes'},
-        new List<Object>{'', 176, '>=$0', 7, '', null, 'Car Loan', 42809, 'Yes'},
-        new List<Object>{'', 146, 'Negative', 7, 'test166@pairwise.test', 0.084, 'Car Loan', 3258321, 'Yes'},
-        new List<Object>{'', 141, 'Negative', null, 'test167@pairwise.test', null, 'Car Loan', 759405, 'Yes'},
-        new List<Object>{'', 105, '>=$0', null, '', 0.11, 'Home Loan', null, 'Yes'},
-        new List<Object>{'', 165, 'Negative', 7, '', 0.11800000000000001, 'Car Loan', 668837, 'Yes'},
-        new List<Object>{'', 128, 'Blank', null, 'test170@pairwise.test', 0.10300000000000001, 'Home Loan', 3821204, 'Yes'},
-        new List<Object>{'', 149, '>=$100', null, '', 0.109, 'Home Loan', 795684, 'Yes'},
-        new List<Object>{'', 150, '>=$100', null, 'test172@pairwise.test', 0.1, 'Car Loan', 5059068, 'Yes'},
-        new List<Object>{'', 155, 'Negative', null, '', 0.109, 'Home Loan', 2172294, 'Yes'}
+        new List<Object>{'', 189, 'Negative', null, '', 107, 'Car Loan', 952318, 'Yes'},
+        new List<Object>{'', 143, 'Negative', 7, '', 0.11, 'Home Loan', 954243, 'Yes'},
+        new List<Object>{'', 163, 'Negative', null, '', 0.07, 'Car Loan', 471393, 'Yes'},
+        new List<Object>{'', 103, 'Negative', 7, '', null, 'Home Loan', 36150, 'Yes'},
+        new List<Object>{'', 193, '>=$100', 7, 'test5@pairwise.test', 0.11, '', null, 'Yes'},
+        new List<Object>{'', 149, 'Negative', 7, 'test6@pairwise.test', 0.08, 'Car Loan', 2515, 'Yes'},
+        new List<Object>{'', 124, 'Negative', null, 'test7@pairwise.test', 0.125, 'Car Loan', 2027422, 'Yes'},
+        new List<Object>{'', 150, 'Negative', 7, 'test8@pairwise.test', 0.14, 'Car Loan', null, 'Yes'},
+        new List<Object>{'', 104, '>=$0', null, 'test9@pairwise.test', 0.11, 'Car Loan', 6431, 'Yes'},
+        new List<Object>{'', 110, '>=$100', 7, '', 0.125, 'Car Loan', null, 'Yes'},
+        new List<Object>{'', 111, 'Negative', 7, 'test11@pairwise.test', 0.125, 'Car Loan', null, 'Yes'},
+        new List<Object>{'', 162, 'Negative', null, 'test12@pairwise.test', 0.10300000000000001, 'Car Loan', 797028, 'Yes'},
+        new List<Object>{'', 189, 'Negative', null, 'test13@pairwise.test', null, 'Car Loan', 661623, 'Yes'},
+        new List<Object>{'', 152, 'Negative', null, '', 0.08, '', null, 'Yes'},
+        new List<Object>{'', 174, 'Negative', 7, '', 0.162, 'Home Loan', 7746473, 'Yes'},
+        new List<Object>{'', 170, 'Negative', 7, '', 0.07, 'Car Loan', 193233, 'Yes'},
+        new List<Object>{'', 191, '>=$0', null, 'test17@pairwise.test', 0.136, 'Car Loan', 911984, 'Yes'},
+        new List<Object>{'', 134, 'Negative', null, '', 0.1, 'Home Loan', 899605, 'Yes'},
+        new List<Object>{'', 169, '>=$0', 7, 'test19@pairwise.test', 0.10300000000000001, 'Car Loan', 7523814, 'Yes'},
+        new List<Object>{'', 184, '>=$0', null, '', 0.07, 'Home Loan', 894242, 'Yes'},
+        new List<Object>{'', 127, '>=$100', 7, '', 107, 'Home Loan', 2312216, 'Yes'},
+        new List<Object>{'', 135, 'Negative', 7, 'test22@pairwise.test', 107, 'Car Loan', null, 'Yes'},
+        new List<Object>{'', 123, '>=$0', 7, '', 0.159, 'Car Loan', 5447366, 'Yes'},
+        new List<Object>{'', 183, '>=$100', 7, 'test24@pairwise.test', 0.11900000000000001, 'Car Loan', 3696787, 'Yes'},
+        new List<Object>{'', 152, 'Negative', 7, '', 0.125, '', null, 'Yes'},
+        new List<Object>{'', 185, 'Blank', 7, 'test26@pairwise.test', 0.146, 'Home Loan', 1745160, 'Yes'},
+        new List<Object>{'', 138, '>=$100', null, 'test27@pairwise.test', 0.162, 'Car Loan', 328710, 'Yes'},
+        new List<Object>{'', 154, '>=$100', 7, '', 0.08, 'Home Loan', null, 'Yes'},
+        new List<Object>{'', 119, 'Negative', 7, '', 0.084, 'Home Loan', 150203, 'Yes'},
+        new List<Object>{'', 129, 'Blank', 7, '', 107, 'Home Loan', 852117, 'Yes'},
+        new List<Object>{'', 127, 'Negative', null, '', 0.08, 'Home Loan', 55287, 'Yes'},
+        new List<Object>{'', 117, 'Negative', null, 'test32@pairwise.test', 0.109, '', null, 'Yes'},
+        new List<Object>{'', 181, '>=$100', null, 'test33@pairwise.test', 0.11900000000000001, 'Home Loan', 9111981, 'Yes'},
+        new List<Object>{'', 153, '>=$0', 7, '', null, '', null, 'Yes'},
+        new List<Object>{'', 130, 'Negative', null, 'test35@pairwise.test', null, 'Home Loan', 6845090, 'Yes'},
+        new List<Object>{'', 191, '>=$100', 7, 'test36@pairwise.test', 0.162, 'Car Loan', 2664934, 'Yes'},
+        new List<Object>{'', 154, 'Blank', 7, '', 0.11800000000000001, 'Home Loan', 834199, 'Yes'},
+        new List<Object>{'', 180, '>=$0', null, '', 0.146, 'Car Loan', null, 'Yes'},
+        new List<Object>{'', 143, '>=$100', 7, 'test39@pairwise.test', 0.146, 'Home Loan', 909852, 'Yes'},
+        new List<Object>{'', 132, 'Negative', 7, 'test40@pairwise.test', 0.146, 'Home Loan', 659076, 'Yes'},
+        new List<Object>{'', 132, 'Blank', null, 'test41@pairwise.test', 0.08, 'Home Loan', 7114549, 'Yes'},
+        new List<Object>{'', 126, '>=$100', null, 'test42@pairwise.test', null, 'Car Loan', 261098, 'Yes'},
+        new List<Object>{'', 107, '>=$0', 7, 'test43@pairwise.test', 0.11, 'Car Loan', 965190, 'Yes'},
+        new List<Object>{'', 200, '>=$0', null, 'test44@pairwise.test', 0.14, '', null, 'Yes'},
+        new List<Object>{'', 100, 'Negative', null, 'test45@pairwise.test', 0.136, 'Home Loan', null, 'Yes'},
+        new List<Object>{'', 131, 'Negative', 7, 'test46@pairwise.test', 0.14, 'Home Loan', 957181, 'Yes'},
+        new List<Object>{'', 198, 'Negative', 7, 'test47@pairwise.test', 107, '', null, 'Yes'},
+        new List<Object>{'', 143, 'Blank', null, 'test48@pairwise.test', 0.09, 'Car Loan', null, 'Yes'},
+        new List<Object>{'', 163, 'Blank', 7, 'test49@pairwise.test', 0.136, '', null, 'Yes'},
+        new List<Object>{'', 151, 'Negative', 7, 'test50@pairwise.test', 107, 'Home Loan', 252805, 'Yes'},
+        new List<Object>{'', 181, '>=$100', null, 'test51@pairwise.test', 0.11800000000000001, 'Home Loan', 81121, 'Yes'},
+        new List<Object>{'', 115, '>=$100', null, 'test52@pairwise.test', 0.1, 'Home Loan', 523785, 'Yes'},
+        new List<Object>{'', 134, 'Negative', null, 'test53@pairwise.test', 0.159, '', null, 'Yes'},
+        new List<Object>{'', 114, '>=$0', 7, 'test54@pairwise.test', 0.136, 'Home Loan', 868689, 'Yes'},
+        new List<Object>{'', 181, 'Blank', 7, '', 0.11, 'Home Loan', 209609, 'Yes'},
+        new List<Object>{'', 111, '>=$100', null, '', null, 'Home Loan', null, 'Yes'},
+        new List<Object>{'', 193, '>=$100', 7, '', 0.14, 'Home Loan', 8707155, 'Yes'},
+        new List<Object>{'', 116, '>=$0', 7, '', 0.14, 'Car Loan', 31159, 'Yes'},
+        new List<Object>{'', 126, 'Blank', 7, '', 0.09, 'Home Loan', 30694, 'Yes'},
+        new List<Object>{'', 125, '>=$0', null, 'test60@pairwise.test', 0.07, '', null, 'Yes'},
+        new List<Object>{'', 123, 'Blank', 7, '', 0.109, 'Car Loan', 971705, 'Yes'},
+        new List<Object>{'', 106, '>=$100', null, '', 0.10300000000000001, 'Home Loan', 749653, 'Yes'},
+        new List<Object>{'', 176, 'Blank', 7, '', 107, 'Home Loan', 78697, 'Yes'},
+        new List<Object>{'', 151, '>=$100', null, 'test64@pairwise.test', 0.125, 'Home Loan', 189244, 'Yes'},
+        new List<Object>{'', 184, 'Blank', null, '', 0.162, '', null, 'Yes'},
+        new List<Object>{'', 168, '>=$0', null, 'test66@pairwise.test', 0.1, 'Car Loan', 1605191, 'Yes'},
+        new List<Object>{'', 135, '>=$100', 7, 'test67@pairwise.test', 0.09, 'Home Loan', 224633, 'Yes'},
+        new List<Object>{'', 148, 'Blank', null, 'test68@pairwise.test', 0.159, 'Home Loan', null, 'Yes'},
+        new List<Object>{'', 128, '>=$0', 7, '', 0.162, 'Car Loan', 61976, 'Yes'},
+        new List<Object>{'', 131, 'Blank', 7, '', 0.146, 'Car Loan', 78817, 'Yes'},
+        new List<Object>{'', 193, '>=$0', null, '', 0.11800000000000001, '', null, 'Yes'},
+        new List<Object>{'', 123, '>=$100', null, '', 0.07, 'Home Loan', 7000838, 'Yes'},
+        new List<Object>{'', 149, 'Blank', null, '', 0.07, 'Car Loan', 965149, 'Yes'},
+        new List<Object>{'', 125, 'Blank', null, '', 0.07, 'Car Loan', 49068, 'Yes'},
+        new List<Object>{'', 157, '>=$100', null, '', 0.162, 'Home Loan', 746132, 'Yes'},
+        new List<Object>{'', 136, '>=$100', null, 'test76@pairwise.test', 0.11800000000000001, 'Car Loan', null, 'Yes'},
+        new List<Object>{'', 175, '>=$100', null, '', 0.10300000000000001, 'Car Loan', 247353, 'Yes'},
+        new List<Object>{'', 193, '>=$100', null, '', 0.159, 'Home Loan', 3604, 'Yes'},
+        new List<Object>{'', 191, 'Blank', 7, 'test79@pairwise.test', 0.1, 'Home Loan', 93410, 'Yes'},
+        new List<Object>{'', 195, '>=$0', null, '', 0.084, 'Car Loan', 62637, 'Yes'},
+        new List<Object>{'', 147, '>=$100', 7, 'test81@pairwise.test', 0.14, 'Car Loan', 142221, 'Yes'},
+        new List<Object>{'', 183, '>=$0', 7, '', 0.109, 'Car Loan', 409794, 'Yes'},
+        new List<Object>{'', 119, 'Blank', null, '', 0.146, 'Home Loan', 9880239, 'Yes'},
+        new List<Object>{'', 185, 'Blank', 7, 'test84@pairwise.test', null, 'Car Loan', 251824, 'Yes'},
+        new List<Object>{'', 122, '>=$100', null, 'test85@pairwise.test', null, 'Home Loan', 4737173, 'Yes'},
+        new List<Object>{'', 196, 'Negative', 7, 'test86@pairwise.test', 0.1, 'Home Loan', 819592, 'Yes'},
+        new List<Object>{'', 131, '>=$0', 7, '', 0.11900000000000001, 'Car Loan', 958328, 'Yes'},
+        new List<Object>{'', 148, '>=$0', 7, 'test88@pairwise.test', 0.10300000000000001, 'Car Loan', 541961, 'Yes'},
+        new List<Object>{'', 100, 'Blank', null, 'test89@pairwise.test', 0.10300000000000001, 'Home Loan', 33298, 'Yes'},
+        new List<Object>{'', 164, 'Blank', 7, '', 0.11800000000000001, 'Home Loan', 9197902, 'Yes'},
+        new List<Object>{'', 162, '>=$0', null, '', 107, 'Home Loan', 595480, 'Yes'},
+        new List<Object>{'', 116, 'Blank', 7, '', 0.136, 'Home Loan', 71908, 'Yes'},
+        new List<Object>{'', 105, 'Blank', 7, '', 0.125, 'Car Loan', 911370, 'Yes'},
+        new List<Object>{'', 189, 'Blank', null, 'test94@pairwise.test', 0.084, '', null, 'Yes'},
+        new List<Object>{'', 113, 'Negative', null, 'test95@pairwise.test', null, 'Home Loan', 3841733, 'Yes'},
+        new List<Object>{'', 113, 'Blank', null, '', 0.09, 'Home Loan', 223572, 'Yes'},
+        new List<Object>{'', 136, 'Negative', 7, '', 0.146, 'Home Loan', 270306, 'Yes'},
+        new List<Object>{'', 121, 'Negative', 7, 'test98@pairwise.test', 0.159, 'Home Loan', 2418870, 'Yes'},
+        new List<Object>{'', 146, '>=$100', null, '', 0.1, 'Home Loan', null, 'Yes'},
+        new List<Object>{'', 136, '>=$0', null, 'test100@pairwise.test', 0.125, 'Home Loan', 6389577, 'Yes'},
+        new List<Object>{'', 180, 'Blank', 7, '', 0.10300000000000001, '', null, 'Yes'},
+        new List<Object>{'', 131, '>=$100', 7, '', 0.084, 'Car Loan', 641372, 'Yes'},
+        new List<Object>{'', 113, 'Negative', 7, 'test103@pairwise.test', 0.1, 'Home Loan', 346615, 'Yes'},
+        new List<Object>{'', 140, 'Blank', null, 'test104@pairwise.test', 0.14, 'Home Loan', 616436, 'Yes'},
+        new List<Object>{'', 118, 'Blank', 7, 'test105@pairwise.test', null, '', null, 'Yes'},
+        new List<Object>{'', 166, '>=$100', 7, '', 0.084, 'Home Loan', 959959, 'Yes'},
+        new List<Object>{'', 134, 'Blank', 7, '', 0.11900000000000001, '', null, 'Yes'},
+        new List<Object>{'', 179, 'Negative', 7, 'test108@pairwise.test', null, 'Car Loan', 245129, 'Yes'},
+        new List<Object>{'', 145, 'Negative', 7, 'test109@pairwise.test', 0.11900000000000001, 'Home Loan', 76373, 'Yes'},
+        new List<Object>{'', 122, '>=$0', null, 'test110@pairwise.test', 0.146, '', null, 'Yes'},
+        new List<Object>{'', 168, '>=$100', 7, '', 0.109, 'Home Loan', null, 'Yes'},
+        new List<Object>{'', 144, '>=$100', 7, 'test112@pairwise.test', 0.109, 'Home Loan', 71753, 'Yes'},
+        new List<Object>{'', 167, 'Negative', null, 'test113@pairwise.test', 0.11, 'Home Loan', 1706334, 'Yes'},
+        new List<Object>{'', 143, 'Negative', 7, '', 0.084, 'Car Loan', 708153, 'Yes'},
+        new List<Object>{'', 140, '>=$0', 7, '', null, 'Car Loan', 727212, 'Yes'},
+        new List<Object>{'', 145, 'Negative', null, '', 0.09, 'Car Loan', 3271587, 'Yes'},
+        new List<Object>{'', 133, '>=$100', null, 'test117@pairwise.test', null, 'Home Loan', null, 'Yes'},
+        new List<Object>{'', 109, '>=$0', 7, '', 0.09, 'Car Loan', 818289, 'Yes'},
+        new List<Object>{'', 133, 'Negative', null, 'test119@pairwise.test', 0.136, 'Home Loan', 207287, 'Yes'},
+        new List<Object>{'', 191, 'Negative', 7, '', 0.146, 'Home Loan', 641074, 'Yes'},
+        new List<Object>{'', 179, '>=$100', 7, '', 0.11900000000000001, 'Car Loan', 975712, 'Yes'},
+        new List<Object>{'', 101, '>=$100', 7, '', 0.08, 'Home Loan', 929734, 'Yes'},
+        new List<Object>{'', 170, '>=$100', null, '', 0.084, 'Home Loan', 5631096, 'Yes'},
+        new List<Object>{'', 191, 'Negative', 7, '', 0.14, 'Car Loan', 3211163, 'Yes'},
+        new List<Object>{'', 178, '>=$100', null, 'test125@pairwise.test', 107, 'Car Loan', 7196060, 'Yes'},
+        new List<Object>{'', 118, '>=$0', 7, 'test126@pairwise.test', 0.08, 'Home Loan', 4327293, 'Yes'},
+        new List<Object>{'', 174, '>=$100', null, '', 0.136, 'Car Loan', 5232620, 'Yes'},
+        new List<Object>{'', 150, '>=$0', null, 'test128@pairwise.test', 0.09, 'Home Loan', 763194, 'Yes'},
+        new List<Object>{'', 151, '>=$100', 7, 'test129@pairwise.test', 0.11, 'Home Loan', 34151, 'Yes'},
+        new List<Object>{'', 113, '>=$0', null, '', 0.09, '', null, 'Yes'},
+        new List<Object>{'', 164, '>=$100', null, '', null, 'Car Loan', 6738214, 'Yes'},
+        new List<Object>{'', 100, 'Negative', null, 'test132@pairwise.test', 0.11800000000000001, 'Car Loan', 300243, 'Yes'},
+        new List<Object>{'', 126, '>=$100', 7, 'test133@pairwise.test', 0.11900000000000001, 'Home Loan', null, 'Yes'},
+        new List<Object>{'', 185, '>=$100', null, '', null, 'Car Loan', 988115, 'Yes'},
+        new List<Object>{'', 123, '>=$0', 7, '', 0.1, '', null, 'Yes'},
+        new List<Object>{'', 164, '>=$0', null, '', 0.125, 'Car Loan', 737966, 'Yes'},
+        new List<Object>{'', 184, 'Blank', null, 'test137@pairwise.test', 0.159, 'Home Loan', 713200, 'Yes'},
+        new List<Object>{'', 157, 'Blank', null, '', 0.08, 'Home Loan', 849555, 'Yes'},
+        new List<Object>{'', 113, '>=$100', 7, 'test139@pairwise.test', 0.162, 'Car Loan', 898097, 'Yes'},
+        new List<Object>{'', 162, '>=$100', null, 'test140@pairwise.test', 0.162, 'Home Loan', 461627, 'Yes'},
+        new List<Object>{'', 157, '>=$100', null, '', 0.159, 'Home Loan', 857176, 'Yes'},
+        new List<Object>{'', 200, '>=$0', 7, 'test142@pairwise.test', 0.159, 'Home Loan', 338394, 'Yes'},
+        new List<Object>{'', 197, '>=$100', 7, '', null, 'Home Loan', 906080, 'Yes'},
+        new List<Object>{'', 102, 'Blank', 7, '', 0.10300000000000001, 'Home Loan', null, 'Yes'},
+        new List<Object>{'', 115, '>=$0', null, 'test145@pairwise.test', 0.09, 'Car Loan', 9384068, 'Yes'},
+        new List<Object>{'', 100, '>=$100', null, 'test146@pairwise.test', 0.084, 'Home Loan', null, 'Yes'},
+        new List<Object>{'', 158, '>=$100', null, '', 0.136, 'Home Loan', 2091490, 'Yes'},
+        new List<Object>{'', 164, '>=$100', 7, 'test148@pairwise.test', 0.159, 'Home Loan', 843620, 'Yes'},
+        new List<Object>{'', 136, '>=$100', null, 'test149@pairwise.test', 0.11800000000000001, 'Home Loan', 484026, 'Yes'},
+        new List<Object>{'', 178, 'Blank', null, 'test150@pairwise.test', 0.11, 'Car Loan', 5301051, 'Yes'},
+        new List<Object>{'', 112, '>=$0', 7, '', 0.11900000000000001, 'Car Loan', 394575, 'Yes'},
+        new List<Object>{'', 163, 'Blank', null, '', 0.136, 'Car Loan', 827321, 'Yes'},
+        new List<Object>{'', 158, '>=$100', 7, 'test153@pairwise.test', 0.109, 'Car Loan', 881925, 'Yes'},
+        new List<Object>{'', 103, '>=$0', 7, '', 0.11900000000000001, 'Home Loan', 971620, 'Yes'},
+        new List<Object>{'', 185, '>=$100', null, '', 0.109, 'Car Loan', 7240636, 'Yes'},
+        new List<Object>{'', 109, 'Blank', null, 'test156@pairwise.test', 0.07, 'Car Loan', 3424960, 'Yes'},
+        new List<Object>{'', 103, '>=$100', null, 'test157@pairwise.test', 0.11800000000000001, 'Home Loan', 2575178, 'Yes'},
+        new List<Object>{'', 170, '>=$100', null, '', 0.162, 'Home Loan', null, 'Yes'},
+        new List<Object>{'', 107, '>=$0', 7, 'test159@pairwise.test', 0.08, 'Car Loan', 438317, 'Yes'},
+        new List<Object>{'', 136, '>=$0', 7, '', 0.125, 'Car Loan', 13372, 'Yes'},
+        new List<Object>{'', 128, '>=$100', 7, 'test161@pairwise.test', 0.14, 'Home Loan', 765947, 'Yes'},
+        new List<Object>{'', 128, '>=$0', null, '', 0.09, 'Car Loan', 502004, 'Yes'},
+        new List<Object>{'', 100, '>=$0', null, 'test163@pairwise.test', 0.07, 'Car Loan', null, 'Yes'},
+        new List<Object>{'', 125, '>=$100', null, '', 0.125, 'Home Loan', 15654, 'Yes'},
+        new List<Object>{'', 151, '>=$0', 7, '', null, 'Car Loan', 2576, 'Yes'},
+        new List<Object>{'', 198, 'Negative', 7, 'test166@pairwise.test', 0.084, 'Car Loan', 3751105, 'Yes'},
+        new List<Object>{'', 108, 'Negative', null, 'test167@pairwise.test', null, 'Car Loan', 818028, 'Yes'},
+        new List<Object>{'', 138, '>=$0', null, '', 0.11, 'Home Loan', null, 'Yes'},
+        new List<Object>{'', 108, 'Negative', 7, '', 0.11800000000000001, 'Car Loan', 720288, 'Yes'},
+        new List<Object>{'', 113, 'Blank', null, 'test170@pairwise.test', 0.10300000000000001, 'Home Loan', 1810335, 'Yes'},
+        new List<Object>{'', 146, '>=$100', null, '', 0.109, 'Home Loan', 880320, 'Yes'},
+        new List<Object>{'', 120, '>=$100', null, 'test172@pairwise.test', 0.1, 'Car Loan', 6024960, 'Yes'},
+        new List<Object>{'', 158, 'Negative', null, '', 0.109, 'Home Loan', 3331078, 'Yes'}
     };
         
     @isTest
@@ -247,7 +247,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -272,7 +272,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -297,7 +297,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -322,7 +322,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -345,7 +345,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -370,7 +370,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -395,7 +395,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -420,7 +420,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -445,7 +445,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -470,7 +470,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -495,7 +495,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -520,7 +520,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -545,7 +545,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -570,7 +570,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -595,7 +595,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -620,7 +620,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -645,7 +645,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -670,7 +670,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -693,7 +693,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -716,7 +716,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -739,7 +739,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -764,7 +764,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -789,7 +789,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -812,7 +812,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -837,7 +837,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -862,7 +862,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -885,7 +885,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -908,7 +908,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -933,7 +933,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -958,7 +958,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -983,7 +983,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1008,7 +1008,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1033,7 +1033,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1058,7 +1058,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1083,7 +1083,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1108,7 +1108,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1133,7 +1133,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1158,7 +1158,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1181,7 +1181,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1206,7 +1206,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1231,7 +1231,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1254,7 +1254,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1277,7 +1277,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1300,7 +1300,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1325,7 +1325,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1350,7 +1350,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1375,7 +1375,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1400,7 +1400,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1425,7 +1425,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1450,7 +1450,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1473,7 +1473,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1496,7 +1496,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1521,7 +1521,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1544,7 +1544,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1569,7 +1569,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1592,7 +1592,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1615,7 +1615,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1640,7 +1640,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1665,7 +1665,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1688,7 +1688,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1713,7 +1713,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1736,7 +1736,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1761,7 +1761,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1784,7 +1784,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1809,7 +1809,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1832,7 +1832,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1855,7 +1855,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1880,7 +1880,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1905,7 +1905,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1930,7 +1930,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1953,7 +1953,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -1976,7 +1976,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2001,7 +2001,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2026,7 +2026,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2049,7 +2049,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2072,7 +2072,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2095,7 +2095,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2118,7 +2118,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2143,7 +2143,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2166,7 +2166,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2189,7 +2189,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2214,7 +2214,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2239,7 +2239,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2264,7 +2264,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2287,7 +2287,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2312,7 +2312,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2335,7 +2335,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2360,7 +2360,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2385,7 +2385,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2410,7 +2410,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2433,7 +2433,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2458,7 +2458,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2483,7 +2483,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2508,7 +2508,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2533,7 +2533,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2558,7 +2558,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2583,7 +2583,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2608,7 +2608,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2631,7 +2631,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2656,7 +2656,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2681,7 +2681,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2704,7 +2704,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2729,7 +2729,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2754,7 +2754,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2779,7 +2779,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2802,7 +2802,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2827,7 +2827,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2852,7 +2852,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2877,7 +2877,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2902,7 +2902,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2925,7 +2925,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2948,7 +2948,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2973,7 +2973,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -2998,7 +2998,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3023,7 +3023,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3048,7 +3048,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3073,7 +3073,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3098,7 +3098,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3123,7 +3123,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3148,7 +3148,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3173,7 +3173,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3198,7 +3198,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3223,7 +3223,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3248,7 +3248,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3273,7 +3273,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3298,7 +3298,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3323,7 +3323,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3346,7 +3346,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3371,7 +3371,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3396,7 +3396,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3419,7 +3419,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3444,7 +3444,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3469,7 +3469,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3494,7 +3494,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3519,7 +3519,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3542,7 +3542,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3567,7 +3567,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3592,7 +3592,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3617,7 +3617,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3640,7 +3640,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3665,7 +3665,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3690,7 +3690,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3713,7 +3713,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3738,7 +3738,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3763,7 +3763,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3788,7 +3788,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3811,7 +3811,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3836,7 +3836,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3861,7 +3861,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3886,7 +3886,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3911,7 +3911,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3936,7 +3936,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3961,7 +3961,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -3984,7 +3984,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -4009,7 +4009,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -4034,7 +4034,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -4059,7 +4059,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -4082,7 +4082,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -4107,7 +4107,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -4130,7 +4130,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -4153,7 +4153,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -4178,7 +4178,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -4201,7 +4201,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -4224,7 +4224,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -4249,7 +4249,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -4274,7 +4274,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -4299,7 +4299,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -4324,7 +4324,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -4349,7 +4349,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -4374,7 +4374,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -4397,7 +4397,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -4422,7 +4422,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());
@@ -4447,7 +4447,7 @@ public class AccountPairwiseTest {
             System.assertEquals(acc.Email__c, testAcc.Email__c);
             System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
             System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-            //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+            //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
             System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
         } catch (Exception e) {
             System.assert(false, e.getMessage());

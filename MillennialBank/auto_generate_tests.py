@@ -108,7 +108,7 @@ def generate_apex_test_cases(test_data):
                     System.assertEquals(acc.Email__c, testAcc.Email__c);
                     System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
                     System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-                    //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+                    //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
                     System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
                 }} catch (Exception e) {{
                     System.assert(false, e.getMessage());
@@ -137,7 +137,7 @@ def generate_apex_test_cases(test_data):
                     System.assertEquals(acc.Email__c, testAcc.Email__c);
                     System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
                     System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
-                    //System.assertEquals(acc.Remaining_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
+                    //System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Remaining_Loan_Amount__c);
                     System.assertEquals(acc.Total_Loan_Amount__c, testAcc.Total_Loan_Amount__c);
                 }} catch (Exception e) {{
                     System.assert(false, e.getMessage());

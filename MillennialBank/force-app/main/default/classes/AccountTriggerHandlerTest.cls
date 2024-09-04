@@ -176,6 +176,7 @@
         Test.stopTest();
         
         for(Account acc : allAccounts){
+            System.debug(results);
             if (acc.RecordTypeId == '012aj000002sfWTAAY') {
         		// Salary Account logic
         		if (acc.Loan_Type__c == 'Home Loan') {
