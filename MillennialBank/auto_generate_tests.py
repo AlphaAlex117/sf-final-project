@@ -158,7 +158,7 @@ def generate_apex_test_input(test_data):
     """
     apex_test_inputs.append(update_sample)
     for data in test_data:
-        test_input = f"""new List<Object>{{'{data[2]}', {data[3]}, '{data[4]}', {data[5]}, '{data[6]}', {data[8]}, {data[9]}, {data[11]}, '{data[12]}'}},
+        test_input = f"""new List<Object>{{'{data[2]}', {data[3]}, '{data[4]}', {data[5]}, '{data[6]}', {data[8]}, '{data[9]}', {data[11]}, '{data[12]}'}},
         """
         apex_test_inputs.append(test_input)
 

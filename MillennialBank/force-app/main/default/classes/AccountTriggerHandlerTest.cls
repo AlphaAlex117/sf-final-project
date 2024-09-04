@@ -68,7 +68,7 @@
         
         List<Account> transactionalAccounts = new List<Account>{
             new Account(Name = 'TestAcc1', 
-                        RecordTypeId = transactionalRecordType.Id,
+                        RecordTypeId = '012aj000002sbClAAI',
                         Active__c = 'Yes',
                         Balance__c = 100000, 
                         Email__c = 'nathan.diaz062@gmail.com',
@@ -76,7 +76,7 @@
                         Total_Loan_Amount__c = 100000),
                 
             new Account(Name = 'TestAcc2', 
-                        RecordTypeId = transactionalRecordType.Id,
+                        RecordTypeId = '012aj000002sbClAAI',
                         Active__c = 'Yes',
                         Balance__c = 100000, 
                         Email__c = 'nathan.diaz062@gmail.com',
@@ -84,7 +84,7 @@
                         Total_Loan_Amount__c = 500000),
                 
              new Account(Name = 'TestAcc3', 
-                        RecordTypeId = transactionalRecordType.Id,
+                        RecordTypeId = '012aj000002sbClAAI',
                         Active__c = 'Yes',
                         Balance__c = 100000, 
                         Email__c = 'nathan.diaz062@gmail.com',
@@ -92,7 +92,7 @@
                         Total_Loan_Amount__c = 1000000),
                 
              new Account(Name = 'TestAcc4', 
-                        RecordTypeId = transactionalRecordType.Id,
+                        RecordTypeId = '012aj000002sbClAAI',
                         Active__c = 'Yes',
                         Balance__c = 100000, 
                         Email__c = 'nathan.diaz062@gmail.com',
@@ -100,7 +100,7 @@
                         Total_Loan_Amount__c = 100000),
                 
              new Account(Name = 'TestAcc5', 
-                        RecordTypeId = transactionalRecordType.Id,
+                        RecordTypeId = '012aj000002sbClAAI',
                         Active__c = 'Yes',
                         Balance__c = 100000, 
                         Email__c = 'nathan.diaz062@gmail.com',
@@ -108,7 +108,7 @@
                         Total_Loan_Amount__c = 500000),
                 
              new Account(Name = 'TestAcc6', 
-                        RecordTypeId = transactionalRecordType.Id,
+                        RecordTypeId = '012aj000002sbClAAI',
                         Active__c = 'Yes',
                         Balance__c = 100000, 
                         Email__c = 'nathan.diaz062@gmail.com',
@@ -118,7 +118,7 @@
             
         List<Account> currentAccounts = new List<Account>{
             new Account(Name = 'TestAcc1', 
-                        RecordTypeId = currentRecordType.Id,
+                        RecordTypeId = '012aj000002sfbJAAQ',
                         Active__c = 'Yes',
                         Balance__c = 100000, 
                         Email__c = 'nathan.diaz062@gmail.com',
@@ -126,7 +126,7 @@
                         Total_Loan_Amount__c = 1000000),
                 
             new Account(Name = 'TestAcc2', 
-                        RecordTypeId = currentRecordType.Id,
+                        RecordTypeId = '012aj000002sfbJAAQ',
                         Active__c = 'Yes',
                         Balance__c = 100000, 
                         Email__c = 'nathan.diaz062@gmail.com',
@@ -134,7 +134,7 @@
                         Total_Loan_Amount__c = 5000000),
                 
             new Account(Name = 'TestAcc3', 
-                        RecordTypeId = currentRecordType.Id,
+                        RecordTypeId = '012aj000002sfbJAAQ',
                         Active__c = 'Yes',
                         Balance__c = 100000, 
                         Email__c = 'nathan.diaz062@gmail.com',
@@ -142,7 +142,7 @@
                         Total_Loan_Amount__c = 10000000),
                 
             new Account(Name = 'TestAcc4', 
-                        RecordTypeId = currentRecordType.Id,
+                        RecordTypeId = '012aj000002sfbJAAQ',
                         Active__c = 'Yes',
                         Balance__c = 100000, 
                         Email__c = 'nathan.diaz062@gmail.com',
@@ -150,7 +150,7 @@
                         Total_Loan_Amount__c = 1000000),
                 
             new Account(Name = 'TestAcc5', 
-                        RecordTypeId = currentRecordType.Id,
+                        RecordTypeId = '012aj000002sfbJAAQ',
                         Active__c = 'Yes',
                         Balance__c = 100000, 
                         Email__c = 'nathan.diaz062@gmail.com',
@@ -158,7 +158,7 @@
                         Total_Loan_Amount__c = 5000000),
                 
             new Account(Name = 'TestAcc6', 
-                        RecordTypeId = currentRecordType.Id,
+                        RecordTypeId = '012aj000002sfbJAAQ',
                         Active__c = 'Yes',
                         Balance__c = 100000, 
                         Email__c = 'nathan.diaz062@gmail.com',
@@ -195,7 +195,8 @@
                 		System.assertEquals(null, acc.Loan_Interest_Rate__c, 'Account should not have been inserted due to exceeding loan limit for Car Loan');
             		}
         		}
-    		} else if (acc.RecordTypeId == transactionalRecordType.Id) {
+    		}
+            else if (acc.RecordTypeId == transactionalRecordType.Id) {
         		// Transactional Account logic
         		if (acc.Loan_Type__c == 'Home Loan') {
             		if (acc.Total_Loan_Amount__c <= 100000) {
@@ -214,7 +215,8 @@
                 		System.assertEquals(13.6, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Transactional Account with Car Loan and amount <= 1,000,000');
             		}
         		}
-    		} else if (acc.RecordTypeId == currentRecordType.Id) {
+    		}
+            else if (acc.RecordTypeId == currentRecordType.Id) {
         		// Current Account logic
         		if (acc.Loan_Type__c == 'Home Loan') {
             		if (acc.Total_Loan_Amount__c <= 1000000) {
