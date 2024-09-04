@@ -107,7 +107,7 @@ def generate_apex_test_cases(test_data):
                 
                 try {{
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='{data[1][2]}' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='{data[2]}' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * {data[7]}, testAcc.Calculated_Interest__c);
@@ -136,7 +136,7 @@ def generate_apex_test_cases(test_data):
                 
                 try {{
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='{data[1][2]}' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='{data[2]}' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * {data[7]}, testAcc.Calculated_Interest__c);

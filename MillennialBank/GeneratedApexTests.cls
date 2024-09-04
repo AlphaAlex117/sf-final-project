@@ -8,7 +8,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -33,7 +33,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -58,7 +58,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -83,7 +83,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 4' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -106,7 +106,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -131,7 +131,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -156,7 +156,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -181,7 +181,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 8' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -206,7 +206,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -231,7 +231,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -256,7 +256,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 11' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -281,7 +281,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -306,7 +306,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -331,7 +331,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 14' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -356,7 +356,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -381,7 +381,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -406,7 +406,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 17' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -431,7 +431,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -454,7 +454,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 19' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -477,7 +477,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -500,7 +500,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 21' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -525,7 +525,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -550,7 +550,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -573,7 +573,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 24' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -598,7 +598,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 25' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -623,7 +623,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -646,7 +646,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 27' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -669,7 +669,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 28' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -694,7 +694,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -719,7 +719,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -744,7 +744,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 31' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -769,7 +769,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 32' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -794,7 +794,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -819,7 +819,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 34' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -844,7 +844,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 35' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -869,7 +869,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 36' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -894,7 +894,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -919,7 +919,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 38' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -942,7 +942,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -967,7 +967,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -992,7 +992,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 41' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -1015,7 +1015,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -1038,7 +1038,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 43' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -1061,7 +1061,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -1086,7 +1086,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 45' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -1111,7 +1111,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -1136,7 +1136,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 47' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -1161,7 +1161,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 48' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -1186,7 +1186,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -1211,7 +1211,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 50' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -1234,7 +1234,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 51' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -1257,7 +1257,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 52' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -1282,7 +1282,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 53' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -1305,7 +1305,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 54' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -1330,7 +1330,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -1353,7 +1353,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 56' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -1376,7 +1376,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -1401,7 +1401,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -1426,7 +1426,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -1449,7 +1449,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 60' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -1474,7 +1474,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 61' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -1497,7 +1497,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 62' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -1522,7 +1522,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 63' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -1545,7 +1545,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 64' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -1570,7 +1570,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 65' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -1593,7 +1593,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 66' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -1616,7 +1616,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -1641,7 +1641,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 68' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -1666,7 +1666,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 69' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -1691,7 +1691,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 70' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -1714,7 +1714,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 71' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -1737,7 +1737,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 72' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -1762,7 +1762,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 73' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -1787,7 +1787,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 74' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -1810,7 +1810,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 75' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -1833,7 +1833,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 76' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -1856,7 +1856,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 77' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -1879,7 +1879,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 78' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -1904,7 +1904,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 79' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -1927,7 +1927,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 80' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -1950,7 +1950,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -1975,7 +1975,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2000,7 +2000,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2025,7 +2025,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -2048,7 +2048,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 85' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2073,7 +2073,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 86' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2096,7 +2096,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -2121,7 +2121,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -2146,7 +2146,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -2171,7 +2171,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 90' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2194,7 +2194,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 91' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -2219,7 +2219,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -2244,7 +2244,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 93' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2269,7 +2269,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 94' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2294,7 +2294,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 95' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -2319,7 +2319,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 96' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -2344,7 +2344,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -2369,7 +2369,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 98' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2392,7 +2392,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2417,7 +2417,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 100' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2442,7 +2442,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2465,7 +2465,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2490,7 +2490,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -2515,7 +2515,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -2540,7 +2540,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 105' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2563,7 +2563,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2588,7 +2588,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 107' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2613,7 +2613,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 108' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -2638,7 +2638,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 109' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -2663,7 +2663,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2686,7 +2686,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2709,7 +2709,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -2734,7 +2734,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 113' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2759,7 +2759,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 114' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -2784,7 +2784,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 115' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2809,7 +2809,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -2834,7 +2834,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 117' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -2859,7 +2859,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -2884,7 +2884,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -2909,7 +2909,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -2934,7 +2934,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -2959,7 +2959,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -2984,7 +2984,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 123' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -3009,7 +3009,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -3034,7 +3034,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 125' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -3059,7 +3059,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 126' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -3084,7 +3084,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 127' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -3107,7 +3107,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -3132,7 +3132,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 129' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -3157,7 +3157,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -3180,7 +3180,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -3205,7 +3205,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -3230,7 +3230,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 133' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -3255,7 +3255,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -3280,7 +3280,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -3303,7 +3303,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 136' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -3328,7 +3328,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 137' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -3353,7 +3353,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -3378,7 +3378,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -3401,7 +3401,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 140' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -3426,7 +3426,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -3451,7 +3451,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 142' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -3474,7 +3474,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -3499,7 +3499,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -3524,7 +3524,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -3549,7 +3549,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -3572,7 +3572,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -3597,7 +3597,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 148' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -3622,7 +3622,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -3647,7 +3647,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -3672,7 +3672,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 151' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -3697,7 +3697,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 152' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -3722,7 +3722,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -3745,7 +3745,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -3770,7 +3770,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 155' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -3795,7 +3795,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 156' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -3820,7 +3820,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -3843,7 +3843,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 158' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -3868,7 +3868,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -3891,7 +3891,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -3914,7 +3914,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 161' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -3939,7 +3939,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 162' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -3962,7 +3962,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 163' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -3985,7 +3985,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 164' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -4010,7 +4010,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 165' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -4035,7 +4035,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -4060,7 +4060,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -4085,7 +4085,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -4110,7 +4110,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 169' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -4135,7 +4135,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.05, testAcc.Calculated_Interest__c);
@@ -4158,7 +4158,7 @@
                 
                 try {
                     insert acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='e' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.038, testAcc.Calculated_Interest__c);
@@ -4183,7 +4183,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 172' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
@@ -4208,7 +4208,7 @@
                 
                 try {
                     update acc;
-                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='d' LIMIT 1];
+                    Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='Pairwise Test Account 173' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
                     System.assertEquals(acc.Balance__c * 0.06, testAcc.Calculated_Interest__c);
