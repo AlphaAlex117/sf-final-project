@@ -16,16 +16,19 @@ public class AccountPairwiseTest {
         if (data[1] != null) {
             acc.Balance__c = (Decimal)data[1];
         }
-       
-       acc.RecordTypeId = (Id)data[2];
-       acc.Email__c = (String)data[3];
-       acc.Loan_Interest_Rate__c = (Decimal)data[4];
-       acc.Total_Loan_Amount__c = (Decimal)data[5];
-       acc.Active__c = (String)data[6];
-       acc.Calculated_Interest__c = (Decimal)data[7];
-       acc.Remaining_Loan_Amount__c = (Decimal)data[8];
-        
-       return acc;
+        acc.RecordTypeId = (Id)data[2];
+        acc.Email__c = (String)data[3];
+        if (data[4] != null) {
+            acc.Loan_Interest_Rate__c = (Decimal)data[4];
+        }
+        if (data[5] != null) {
+            acc.Total_Loan_Amount__c = (Decimal)data[5];
+        }
+        acc.Active__c = (String)data[6];
+        acc.Calculated_Interest__c = (Decimal)data[7];
+        acc.Remaining_Loan_Amount__c = (Decimal)data[8];
+            
+        return acc;
    }
 
     

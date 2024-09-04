@@ -90,24 +90,24 @@ def generate_test_data(sheet):
 def generate_apex_test_cases(test_data):
     apex_tests = []
 
-    for data in enumerate(test_data):
+    for data in test_data:
         # Add a Create Test
-        if (data[1][1] == 'Create'):
+        if (data[1] == 'Create'):
             apex_test = f"""
             @isTest
-            public static void testAccount_{data[1][0]}() {{
+            public static void testAccount_{data[0]}() {{
                 Test.startTest();
                 Account acc = new Account();
-                acc.Name = '{data[1][2]}';
-                acc.Balance__c = {data[1][3]};
-                acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('{data[1][4]}').getRecordTypeId();
-                acc.Calculated_Interest__c = {data[1][5]};
-                acc.Email__c = '{data[1][6]}';
-                acc.Loan_Interest_Rate__c = {data[1][8]};
-                acc.Loan_Type__c = '{data[1][9]}';
-                //acc.Remaining_Loan_Amount__c = {data[1][10]};
-                acc.Total_Loan_Amount__c = {data[1][11]};
-                acc.Active__c = '{data[1][12]}';
+                acc.Name = '{data[2]}';
+                acc.Balance__c = {data[3]};
+                acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('{data[4]}').getRecordTypeId();
+                acc.Calculated_Interest__c = {data[5]};
+                acc.Email__c = '{data[6]}';
+                acc.Loan_Interest_Rate__c = {data[8]};
+                acc.Loan_Type__c = '{data[9]}';
+                //acc.Remaining_Loan_Amount__c = {data[10]};
+                acc.Total_Loan_Amount__c = {data[11]};
+                acc.Active__c = '{data[12]}';
                 
                 
                 try {{
@@ -115,7 +115,7 @@ def generate_apex_test_cases(test_data):
                     Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='{data[1][2]}' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
-                    System.assertEquals(acc.Balance__c * {data[1][7]}, testAcc.Calculated_Interest__c);
+                    System.assertEquals(acc.Balance__c * {data[7]}, testAcc.Calculated_Interest__c);
                     System.assertEquals(acc.Email__c, testAcc.Email__c);
                     System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
                     System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
@@ -130,27 +130,27 @@ def generate_apex_test_cases(test_data):
             apex_tests.append(apex_test)
         
         # Add an Update Test
-        elif (data[1][1] == 'Update'):
+        elif (data[1] == 'Update'):
             apex_test = f"""
             @isTest
-            public static void testAccount_{data[1][0]}() {{
+            public static void testAccount_{data[0]}() {{
                 Test.startTest();
                 Account acc = new Account();
                 acc.Name = 'ToUpdate Account';
                 acc.Balance__c = 100;
-                acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('{data[1][4]}').getRecordTypeId();
+                acc.RecordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('{data[4]}').getRecordTypeId();
                 acc.Email__c = 'testUpdate@pairwise.test';
-                acc.Active__c = '{data[1][12]}';
+                acc.Active__c = '{data[12]}';
                 insert acc;
                 
-                acc.Name = '{data[1][2]}';
-                acc.Balance__c = {data[1][3]};
-                acc.Calculated_Interest__c = {data[1][5]};
-                acc.Email__c = '{data[1][6]}';
-                acc.Loan_Interest_Rate__c = {data[1][8]};
-                acc.Loan_Type__c = '{data[1][9]}';
-                acc.Remaining_Loan_Amount__c = {data[1][10]};
-                acc.Total_Loan_Amount__c = {data[1][11]};
+                acc.Name = '{data[2]}';
+                acc.Balance__c = {data[3]};
+                acc.Calculated_Interest__c = {data[5]};
+                acc.Email__c = '{data[6]}';
+                acc.Loan_Interest_Rate__c = {data[8]};
+                acc.Loan_Type__c = '{data[9]}';
+                acc.Remaining_Loan_Amount__c = {data[10]};
+                acc.Total_Loan_Amount__c = {data[11]};
                 
                 
                 try {{
@@ -158,7 +158,7 @@ def generate_apex_test_cases(test_data):
                     Account testAcc = [SELECT name, balance__c, calculated_interest__c, email__c, interest_rate__c, loan_interest_rate__c, loan_type__c, remaining_loan_amount__c, total_loan_amount__c, active__c FROM Account WHERE name='{data[1][2]}' LIMIT 1];
                     System.assertEquals(acc.Name, testAcc.Name);
                     System.assertEquals(acc.Balance__c, testAcc.Balance__c);
-                    System.assertEquals(acc.Balance__c * {data[1][7]}, testAcc.Calculated_Interest__c);
+                    System.assertEquals(acc.Balance__c * {data[7]}, testAcc.Calculated_Interest__c);
                     System.assertEquals(acc.Email__c, testAcc.Email__c);
                     System.assertEquals(acc.Loan_Interest_Rate__c, testAcc.Loan_Interest_Rate__c);
                     System.assertEquals(acc.Loan_Type__c, testAcc.Loan_Type__c);
@@ -174,12 +174,28 @@ def generate_apex_test_cases(test_data):
         
     return "\n".join(apex_tests)
 
+# Create test input
+def generate_apex_test_input(test_data):
+    apex_test_inputs = []
+    
+    for data in test_data:
+        test_input = f""""
+
+        """
+        apex_test_inputs.append(test_input)
+
+
 # Main function to run the script
 def main():
     excel_path = "C:/Users/alexa/Downloads/Ironhack Project 3 Account(2).xlsx"
     sheet = load_excel(excel_path)
     test_data = generate_test_data(sheet)
     #print(test_data)
+    apex_test_input = generate_apex_test_input(test_data)
+
+    with open("GeneratedApexTestInputs.cls", "w") as file:
+        file.write(apex_test_input)
+
     apex_test_cases = generate_apex_test_cases(test_data)
     #print(apex_test_cases)
     
