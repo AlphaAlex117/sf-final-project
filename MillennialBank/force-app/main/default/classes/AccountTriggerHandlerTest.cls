@@ -176,7 +176,7 @@
         Test.stopTest();
         
         for(Account acc : allAccounts){
-            if (acc.RecordTypeId == salaryRecordType.Id) {
+            if (acc.RecordTypeId == '012aj000002sfWTAAY') {
         		// Salary Account logic
         		if (acc.Loan_Type__c == 'Home Loan') {
             		if (acc.Total_Loan_Amount__c <= 100000) {
@@ -186,7 +186,8 @@
             		} else if (acc.Total_Loan_Amount__c <= 1000000) {
                 		System.assertEquals(14.0, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Salary Account with Home Loan and amount <= 1,000,000');
             		}
-        		} else if (acc.Loan_Type__c == 'Car Loan') {
+        		}
+                else if (acc.Loan_Type__c == 'Car Loan') {
             		if (acc.Total_Loan_Amount__c <= 100000) {
                 		System.assertEquals(8.4, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Salary Account with Car Loan and amount <= 100,000');
             		} else if (acc.Total_Loan_Amount__c <= 500000) {
@@ -196,7 +197,7 @@
             		}
         		}
     		}
-            else if (acc.RecordTypeId == transactionalRecordType.Id) {
+            else if (acc.RecordTypeId == '012aj000002sbClAAI') {
         		// Transactional Account logic
         		if (acc.Loan_Type__c == 'Home Loan') {
             		if (acc.Total_Loan_Amount__c <= 100000) {
@@ -206,7 +207,8 @@
             		} else if (acc.Total_Loan_Amount__c <= 1000000) {
                 		System.assertEquals(15.9, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Transactional Account with Home Loan and amount <= 1,000,000');
             		}
-        		} else if (acc.Loan_Type__c == 'Car Loan') {
+        		}
+                else if (acc.Loan_Type__c == 'Car Loan') {
             		if (acc.Total_Loan_Amount__c <= 100000) {
                 		System.assertEquals(7.0, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Transactional Account with Car Loan and amount <= 100,000');
             		} else if (acc.Total_Loan_Amount__c <= 500000) {
@@ -216,7 +218,7 @@
             		}
         		}
     		}
-            else if (acc.RecordTypeId == currentRecordType.Id) {
+            else if (acc.RecordTypeId == '012aj000002sfbJAAQ') {
         		// Current Account logic
         		if (acc.Loan_Type__c == 'Home Loan') {
             		if (acc.Total_Loan_Amount__c <= 1000000) {
@@ -226,7 +228,8 @@
             		} else if (acc.Total_Loan_Amount__c <= 10000000) {
                 		System.assertEquals(16.2, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Current Account with Home Loan and amount <= 10,000,000');
             		}
-        		} else if (acc.Loan_Type__c == 'Car Loan') {
+        		}
+                else if (acc.Loan_Type__c == 'Car Loan') {
             		if (acc.Total_Loan_Amount__c <= 1000000) {
                 		System.assertEquals(9.0, acc.Loan_Interest_Rate__c, 'Incorrect Loan Interest Rate for Current Account with Car Loan and amount <= 1,000,000');
             		} else if (acc.Total_Loan_Amount__c <= 5000000) {
