@@ -387,6 +387,12 @@
         Database.SaveResult[] results = Database.insert(allAccounts, false);
         
         List<Account> insertedAccounts = [SELECT id, name, recordtypeid, total_loan_amount__c, loan_type__c, loan_interest_rate__c FROM Account];
+        Integer rand;
+        Integer max = 1000000;
+        Integer min = 1;
+        for(Account acc : insertedAccounts){
+            rand = min + (Integer)Math.floor(Math.random() * (max - min + 1));
+        }
         
     }
 }

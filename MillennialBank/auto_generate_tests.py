@@ -32,7 +32,13 @@ def generate_test_data(sheet):
             balance = random.randint(100, 200)
         
         # Get Test Record Type from file.
-        record_type = row[4]
+        record_type = 'None'
+        if (row[4] == 'Salary Account'):
+            record_type = 'Salary_Account'
+        elif (row[4] == 'Transactional Account'):
+            record_type = 'Transactional_Account'
+        elif (row[4] == 'Current Account'):
+            record_type = 'Current_Account'
 
         # Get Test Calculated Interest from file. If Anything Else, then add an input.
         calculated_interest = 'null'
