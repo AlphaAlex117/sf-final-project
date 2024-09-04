@@ -180,7 +180,7 @@ def generate_apex_test_input(test_data):
     
     for data in test_data:
         test_input = f""""
-
+        new List<Object>{{'ToUpdate Account', 100, 'Salary Account', calculated_interest, email, interest_rate, loan_interest_rate, loan_type, remaining_loan_amount, total_loan_amount, active}}
         """
         apex_test_inputs.append(test_input)
 
