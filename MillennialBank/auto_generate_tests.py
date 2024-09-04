@@ -32,7 +32,7 @@ def generate_test_data(sheet):
             balance = random.randint(100, 200)
         
         # Get Test Record Type from file.
-        record_type = 'None'
+        record_type = 'Error'
         if (row[4] == 'Salary Account'):
             record_type = 'Salary_Account'
         elif (row[4] == 'Transactional Account'):
