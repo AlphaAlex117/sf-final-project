@@ -4,13 +4,13 @@
     static RecordType currentRecordType;
     
     @TestSetup static void setTestData(){
-        salaryRecordType = [SELECT Id FROM RecordType 
+        RecordType salaryRecordType = [SELECT Id FROM RecordType 
                             WHERE SObjectType = 'Account' AND DeveloperName = 'Salary_Account' 
                             LIMIT 1];
-        transactionalRecordType = [SELECT Id FROM RecordType 
+        RecordType transactionalRecordType = [SELECT Id FROM RecordType 
                                    WHERE SObjectType = 'Account' AND DeveloperName = 'Transactional_Account' 
                                    LIMIT 1];
-        currentRecordType = [SELECT Id FROM RecordType 
+        RecordType currentRecordType = [SELECT Id FROM RecordType 
                              WHERE SObjectType = 'Account' AND DeveloperName = 'Current_Account' 
                              LIMIT 1];
     }
@@ -18,7 +18,7 @@
     @isTest static void testBeforeInsert(){
         List<Account> salaryAccounts = new List<Account>{
             new Account(Name = 'TestAcc1', 
-                        RecordTypeId = salaryRecordType.Id,
+                        RecordTypeId = '012aj000002sfWTAAY',
                         Active__c = 'Yes',
                         Balance__c = 100000, 
                         Email__c = 'nathan.diaz062@gmail.com',
@@ -26,7 +26,7 @@
                         Total_Loan_Amount__c = 100000),
                 
             new Account(Name = 'TestAcc2', 
-                        RecordTypeId = salaryRecordType.Id,
+                        RecordTypeId = '012aj000002sfWTAAY',
                         Active__c = 'Yes',
                         Balance__c = 100000, 
                         Email__c = 'nathan.diaz062@gmail.com',
@@ -34,7 +34,7 @@
                         Total_Loan_Amount__c = 500000),
                 
             new Account(Name = 'TestAcc3', 
-                        RecordTypeId = salaryRecordType.Id,
+                        RecordTypeId = '012aj000002sfWTAAY',
                         Active__c = 'Yes',
                         Balance__c = 100000, 
                         Email__c = 'nathan.diaz062@gmail.com',
@@ -42,7 +42,7 @@
                         Total_Loan_Amount__c = 1000000),
                 
             new Account(Name = 'TestAcc4', 
-                        RecordTypeId = salaryRecordType.Id,
+                        RecordTypeId = '012aj000002sfWTAAY',
                         Active__c = 'Yes',
                         Balance__c = 100000, 
                         Email__c = 'nathan.diaz062@gmail.com',
@@ -50,7 +50,7 @@
                         Total_Loan_Amount__c = 100000),
                 
             new Account(Name = 'TestAcc5', 
-                        RecordTypeId = salaryRecordType.Id,
+                        RecordTypeId = '012aj000002sfWTAAY',
                         Active__c = 'Yes',
                         Balance__c = 100000, 
                         Email__c = 'nathan.diaz062@gmail.com',
@@ -58,7 +58,7 @@
                         Total_Loan_Amount__c = 500000),
                 
             new Account(Name = 'TestAcc6', 
-                        RecordTypeId = salaryRecordType.Id,
+                        RecordTypeId = '012aj000002sfWTAAY',
                         Active__c = 'Yes',
                         Balance__c = 100000, 
                         Email__c = 'nathan.diaz062@gmail.com',
