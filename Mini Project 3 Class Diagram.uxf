@@ -5,9 +5,9 @@
     <id>UMLClass</id>
     <coordinates>
       <x>243</x>
-      <y>36</y>
+      <y>0</y>
       <w>540</w>
-      <h>342</h>
+      <h>396</h>
     </coordinates>
     <panel_attributes>Account
 --
@@ -20,15 +20,20 @@
 -Interest_Rate__c: Formula(Percent)
 -Loan_Interest_Rate__c: Percent
 -Loan_Type__c: Picklist
--Monthly_Interest_Rate_Payments__c: Formula(Currency)
--Phone: Phone
+-Monthly_Interest_Rate_Payments__c: Formula(Currency)s
 -Remaining_Loan_Amount__c: Currency
 -Total_Loan_Amount__c: Currency
 --
-[FLOW] Restrict Creation if Account Balance is Below Minimum
+[FLOW] Home and Car Loan Flow
 [FLOW] Restrict Account Being Below or Above the Absolute Total Loan Amount Min and Max
+[FLOW] Restrict Creation if Account Balance is Below Minimum
+[FLOW] Send Email On Account Creation 2
+[FLOW] Set Remaining Loan Amount
 [TRIGGER] calculateInterest()
 [TRIGGER] calculateLoanInterestRate()
+[VALIDATION RULE] Account_Balance_Cannot_Be_Negative
+[VALIDATION RULE] Account_MIRP_Cannot_Be_Negative
+[VALIDATION RULE] Account_RLA_Cannot_Be_Negative
 --
 Responsibilities
 -- Holds variables, but the functionalities depend on the 
@@ -40,8 +45,8 @@ record types.</panel_attributes>
     <coordinates>
       <x>801</x>
       <y>162</y>
-      <w>342</w>
-      <h>216</h>
+      <w>297</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>Contact
 --
@@ -51,10 +56,8 @@ record types.</panel_attributes>
 -LastName: Text
 --
 [FLOW] Send Email On Create Flow
-[VALIDATION RULE] Account_Validation
-[VALIDATION RULE] Contact_Validation
-[VALIDATION RULE] Priority_Validation
-[VALIDATION RULE] Subject_Validation
+[VALIDATION RULE] Account_Name_Validation
+[VALIDATION RULE] Email_Validation
 --
 Responsibilities
 -- Holds the Contacts for Accounts that are from a 
@@ -67,7 +70,7 @@ business or company.</panel_attributes>
       <x>387</x>
       <y>468</y>
       <w>342</w>
-      <h>207</h>
+      <h>252</h>
     </coordinates>
     <panel_attributes>Case
 --
@@ -80,8 +83,11 @@ business or company.</panel_attributes>
 -Status: Picklist
 -Subject: Text
 --
-[VALIDATION RULE] Account_Name_Validation
-[VALIDATION RULE] Email_Validation
+[FLOW] Send Email On Create Flow
+[VALIDATION RULE] Account_Validation
+[VALIDATION RULE] Contact_Validation
+[VALIDATION RULE] Priority_Validation
+[VALIDATION RULE] Subject_Validation
 --
 Responsibilities
 -- Holds all the issues raised by respective contacts.</panel_attributes>
@@ -105,29 +111,29 @@ can have &gt;</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>549</x>
-      <y>369</y>
+      <y>387</y>
       <w>90</w>
-      <h>117</h>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0..1
 m2=0..n
 can have v</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>720</x>
-      <y>369</y>
+      <y>342</y>
       <w>288</w>
-      <h>153</h>
+      <h>180</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0..1
 m2=0..n
 &lt; can have</panel_attributes>
-    <additional_attributes>10.0;140.0;280.0;140.0;280.0;10.0</additional_attributes>
+    <additional_attributes>10.0;170.0;280.0;170.0;280.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
