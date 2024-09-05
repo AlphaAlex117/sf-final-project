@@ -55,7 +55,7 @@ record types.</panel_attributes>
 -Email: Email
 -LastName: Text
 --
-[FLOW] Send Email On Create Flow
+[FLOW] Created Contact
 [VALIDATION RULE] Account_Name_Validation
 [VALIDATION RULE] Email_Validation
 --
