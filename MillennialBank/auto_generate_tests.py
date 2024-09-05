@@ -251,7 +251,7 @@ def main():
     
     apex_test_file = generate_apex_file(apex_test_input, apex_test_cases)
 
-    with open("force-app\main\default\classes\AccountPairwiseTest.cls", "w") as file:
+    with open("AccountPairwiseTest.cls", "w") as file:
         file.write(apex_test_file)
 
 if __name__ == "__main__":
