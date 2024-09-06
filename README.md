@@ -1,6 +1,9 @@
 ![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
 
 # Project | Enhance Banking and Loan Experiences
+By: Alexander L, Daniel, Jonathan, and Mortimel.
+
+<br>
 
 ## Introduction
 
@@ -11,8 +14,12 @@ This application helps enhance the banking experience with 3 new account types, 
 ## Design Diagrams
 
 ![Project 3 Use Case Diagram](https://github.com/AlphaAlex117/sf-final-project/blob/main/Mini%20Project%203%20Usecase%20Diagram.png)
+Figure 1: Project's Use Case Diagram
+
+<br>
 
 ![Project 3 Class Diagram](https://github.com/AlphaAlex117/sf-final-project/blob/main/Mini%20Project%203%20Class%20Diagram.png)
+Figure 2: Project's Class Diagram
 
 <!-- ## Submission
 
