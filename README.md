@@ -14,9 +14,9 @@ To make it a seamless experience for the end users, we made a strong system whic
 
 ## Design Diagrams
 
-![Project 3 Use Case Diagram](Mini Project 3 Usecase Diagram.png)
+![Project 3 Use Case Diagram](https://github.com/AlphaAlex117/sf-final-project/blob/main/Mini%20Project%203%20Usecase%20Diagram.png)
 
-![Project 3 Class Diagram](Mini Project 3 Class Diagram.png)
+![Project 3 Class Diagram](https://github.com/AlphaAlex117/sf-final-project/blob/main/Mini%20Project%203%20Class%20Diagram.png)
 
 <!-- ## Submission
 
