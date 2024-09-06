@@ -8,21 +8,15 @@
 
 This application is applicable for creating 3 types of Bank Accounts in the system. These bank accounts will notify users for their FD renewal and interest rates. Also timely Loans related requirement mails should be triggering to the users.
 
-To make it a seamless experience for the end users, we need to make a strong system which can take required information from users and can utilize it for the respective user's view and their growth in terms of profit for both bank and users.
+To make it a seamless experience for the end users, we made a strong system which can take required information from users and can utilize it for the respective user's view and their growth in terms of profit for both bank and users.
 
 <br>
 
-## Submission
+## Design Diagrams
 
-Upon completion, run the following commands:
+![Project 3 Use Case Diagram](Mini Project 3 Usecase Diagram.png)
 
-```shell
-git add .
-git commit -m "done"
-git push origin master
-```
-
-Create Pull Request so your teaching staff can check up your work.
+![Project 3 Class Diagram](Mini Project 3 Class Diagram.png)
 
 <!-- ## Submission
 
