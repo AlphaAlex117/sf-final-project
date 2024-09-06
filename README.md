@@ -14,11 +14,13 @@ This application helps enhance the banking experience with 3 new account types, 
 ## Design Diagrams
 
 ![Project 3 Use Case Diagram](https://github.com/AlphaAlex117/sf-final-project/blob/main/Mini%20Project%203%20Usecase%20Diagram.png)
+<br>
 Figure 1: Project's Use Case Diagram
 
 <br>
 
 ![Project 3 Class Diagram](https://github.com/AlphaAlex117/sf-final-project/blob/main/Mini%20Project%203%20Class%20Diagram.png)
+<br>
 Figure 2: Project's Class Diagram
 
 <!-- ## Submission
